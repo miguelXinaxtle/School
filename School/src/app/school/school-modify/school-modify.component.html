@@ -20,7 +20,7 @@
           formControlName="nombre"
         />
         <mat-error *ngIf="formRegisterGroup.get('nombre').hasError('required')">
-          El correo electrónico es requerido.
+          El nombre es requerido.
         </mat-error>
       </mat-form-field>
 
@@ -34,7 +34,7 @@
           formControlName="estado"
         />
         <mat-error *ngIf="formRegisterGroup.get('estado').hasError('required')">
-          La contraseña es requerida.
+          La estado es requerido.
         </mat-error>
       </mat-form-field>
 
@@ -48,7 +48,7 @@
           formControlName="ciudad"
         />
         <mat-error *ngIf="formRegisterGroup.get('ciudad').hasError('required')">
-          El correo electrónico es requerido.
+          La ciudad es requerida.
         </mat-error>
       </mat-form-field>
 
@@ -64,7 +64,7 @@
         <mat-error
           *ngIf="formRegisterGroup.get('municipio').hasError('required')"
         >
-          El correo electrónico es requerido.
+          El municipio es requerido.
         </mat-error>
       </mat-form-field>
       <br />
