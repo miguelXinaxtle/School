@@ -1,0 +1,43 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Mombre</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Municipio</th>
+      <th class="text-center" scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let schoolItem of schoolList">
+      <th scope="row">{{ schoolItem.idEscuela }}</th>
+      <td>{{ schoolItem.nombre }}</td>
+      <td>{{ schoolItem.estado }}</td>
+      <td>{{ schoolItem.ciudad }}</td>
+      <td>{{ schoolItem.municipio }}</td>
+      <td class="text-center">
+        <button type="button" (click)="modify(schoolItem)" class="btn btn-link">
+          <span class="glyphicon glyphicon-pencil"></span>
+          Modificar
+        </button>
+        <button
+          type="button"
+          (click)="delete(schoolItem.idEscuela)"
+          class="btn btn-link"
+        >
+          <span class="glyphicon glyphicon-remove"></span>
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col text-right">
+    <button type="button" (click)="addSchool()" class="btn btn-primary">
+      Agregar
+    </button>
+  </div>
+</div>

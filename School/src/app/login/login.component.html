@@ -1,0 +1,58 @@
+<div class="bg">
+  <mat-card class="login-card">
+    <mat-card-content>
+      <form
+        (ngSubmit)="sign()"
+        class="login-form-container"
+        [formGroup]="formLoginGroup"
+      >
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Correo electrónico"
+            name="correo"
+            maxlength="70"
+            type="text"
+            formControlName="correo"
+          />
+          <mat-error *ngIf="formLoginGroup.get('correo').hasError('required')">
+            El correo electrónico es requerido.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Contraseña"
+            name="contrasenia"
+            maxlength="10"
+            type="password"
+            formControlName="contrasenia"
+          />
+          <mat-error
+            *ngIf="formLoginGroup.get('contrasenia').hasError('required')"
+          >
+            La contraseña es requerida.
+          </mat-error>
+        </mat-form-field>
+
+        <div mat-dialog-actions class="login-button" align="end">
+          <button
+            type="submit"
+            matTooltip="Iniciar sesión"
+            [disabled]="!formLoginGroup.valid"
+            class="btn btn-primary"
+          >
+            Entrar
+          </button>
+          <div class="login-register">
+            <button class="btn btn-link" routerLink="/register" type="button">
+              Registrate aqui
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

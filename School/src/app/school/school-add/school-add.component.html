@@ -1,0 +1,84 @@
+<mat-card class="register-card">
+  <mat-card-header class="register-title">
+    <mat-card-title>
+      <h4>Registro</h4>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      (ngSubmit)="register()"
+      class="register-form-container"
+      [formGroup]="formRegisterGroup"
+    >
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nombre de la escuela"
+          name="nombre"
+          maxlength="70"
+          type="text"
+          formControlName="nombre"
+        />
+        <mat-error *ngIf="formRegisterGroup.get('nombre').hasError('required')">
+          El correo electrónico es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Estado"
+          name="estado"
+          maxlength="50"
+          type="text"
+          formControlName="estado"
+        />
+        <mat-error *ngIf="formRegisterGroup.get('estado').hasError('required')">
+          La contraseña es requerida.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Ciudad"
+          name="ciudad"
+          maxlength="70"
+          type="text"
+          formControlName="ciudad"
+        />
+        <mat-error *ngIf="formRegisterGroup.get('ciudad').hasError('required')">
+          El correo electrónico es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Municipio"
+          name="municipio"
+          maxlength="100"
+          type="text"
+          formControlName="municipio"
+        />
+        <mat-error
+          *ngIf="formRegisterGroup.get('municipio').hasError('required')"
+        >
+          El correo electrónico es requerido.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <div mat-dialog-actions class="register-button" align="end">
+        <button
+          type="submit"
+          matTooltip="Iniciar sesión"
+          [disabled]="!formRegisterGroup.valid"
+          class="btn btn-primary"
+        >
+          Registar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
