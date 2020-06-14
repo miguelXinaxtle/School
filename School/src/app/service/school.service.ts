@@ -17,24 +17,28 @@ export class SchoolService {
   }
 
   getSchoolList(): Observable<IResponse> {
+    // Invocar el servicio
     return this.http
       .get<IResponse>(`${this.urlBase}school/`)
       .pipe(catchError(this.errorHandler));
   }
 
   addSchool(school: ISchool): Observable<IResponse> {
+    // Invocar el servicio
     return this.http
       .post<IResponse>(`${this.urlBase}school/addSchool`, school)
       .pipe(catchError(this.errorHandler));
   }
 
   modifySchool(school: ISchool): Observable<IResponse> {
+    // Invocar el servicio
     return this.http
       .post<IResponse>(`${this.urlBase}school/modifySchool`, school)
       .pipe(catchError(this.errorHandler));
   }
 
   removeSchool(idSchool: number): Observable<IResponse> {
+    // Invocar el servicio
     return this.http
       .post<IResponse>(`${this.urlBase}school/removeSchool`, {
         idEscuela: idSchool,

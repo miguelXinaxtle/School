@@ -25,22 +25,25 @@ export class AuthService {
   }
 
   get isAutenticated() {
-    //Recargamos el usuario cuando solicitan saber si esta autenticado
+    // Recargamos el usuario cuando solicitan saber si esta autenticado
     this.user = JSON.parse(localStorage.getItem(Settings.KEY_USER));
     return !!localStorage.getItem(Settings.KEY_USER);
   }
 
   logout() {
+    // Elimina el ususario del localStorage
     localStorage.removeItem(Settings.KEY_USER);
   }
 
   login(login: ILogin) {
+    // Invocar el servicio
     return this.http
       .post(`${this.urlBase}security/login`, login)
       .pipe(catchError(this.errorHandler));
   }
 
   addUser(register: IRegister) {
+    // Invocar el servicio
     return this.http
       .post(`${this.urlBase}security/addUser`, register)
       .pipe(catchError(this.errorHandler));

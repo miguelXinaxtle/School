@@ -9,6 +9,7 @@ export class NeedAuthService {
   constructor(public authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
+    // Determina si esta authenticado el usuario
     if (!this.authService.isAutenticated) {
       this.router.navigate(["splash"]);
       return false;

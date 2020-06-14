@@ -22,12 +22,15 @@ export class AuthInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    // Obtiene el usuario de localStorage para obtener el token en caso de que exista
     const userJson: string = localStorage.getItem(Settings.KEY_USER);
 
     let request = req;
 
     if (userJson) {
+      // Deserealiza el objeto para obtener el token
       const user: IUser = JSON.parse(userJson);
+      // Agrega el token al cabecero de las peticiones
       request = req.clone({
         setHeaders: {
           authorization: user.token,
@@ -38,6 +41,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
+          // El token es caduco, por lo tanto es redirigido de la aplicación
           localStorage.clear();
           this.router.navigateByUrl("/splash");
         }
