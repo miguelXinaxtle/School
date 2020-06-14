@@ -17,14 +17,17 @@ import { async } from "q";
 import { IToken } from "./models/token";
 import { IResult } from "./models/result";
 
+// registro de service y repositories
 Container.set(SecurityService, Container.get(SecurityRepository));
 Container.set(SchoolService, Container.get(SchoolRepository));
 
 useContainer(Container);
 const app = createExpressServer({
   cors: true,
+  // Aqui se registran los controllers
   controllers: [SecurityController, SchoolController],
   middlewares: [ErrorCatcherMiddleware],
+  // Validacion del request
   authorizationChecker: async (action: Action, roles: string[]) => {
     const token = action.request.headers["authorization"];
     const body: IToken = {
@@ -32,17 +35,19 @@ const app = createExpressServer({
       token,
     };
 
+    // Valida que el token exista en la base de datos
     const user: IResult = await new SecurityRepository().checkToken(body);
-    if (user && user.error == "" && user.item && user.item.tokenValido) {
+    if (user && user.item && user.item.tokenValido) {
       return true;
     }
-    // Cuando se implementen roles
+    // Validación cuando se implemente los roles
     // if (user && roles.find(role => user.roles.indexOf(role) !== -1))
     //     return true;
     return false;
   },
 });
 
+// Puedes cambiar el puerto del servicio
 const PORT = process.env.PORT || 5990;
 
 app.listen(PORT);

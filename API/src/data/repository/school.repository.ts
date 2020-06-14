@@ -8,18 +8,22 @@ import { default as config } from "../../config";
 import { IResult } from "../../models/result";
 import { ISchool } from "../../models/school";
 
+// Implementa la interfaz del repositorio
 @Service()
 export class SchoolRepository implements ISchoolRepository {
   private conf: any;
 
   constructor() {
+    // Obtener el entorno de ejecución
     const env: string = process.env.NODE_ENV || "development";
+    // obtener la configuracion dependiendo del entorno
     this.conf = (config as any)[env];
   }
 
   private dbConnect(callback: Function): Q.IPromise<any> {
     const env: string = process.env.NODE_ENV || "development";
     var deferred = Q.defer();
+    // Conexion a base de datos dependiendo de entorno
     var dbConn = new sql.ConnectionPool((confDB as any)[env]);
     dbConn
       .connect()
@@ -41,6 +45,7 @@ export class SchoolRepository implements ISchoolRepository {
         .execute("[Catalogo].[INS_ESCUELA_SP]")
         .then((data: sql.IProcedureResult<any>) => {
           const res = data.recordset;
+          // Validacion de la respuesta del procedimiento
           if (res && res.length > 0 && res[0].idEscuela) {
             result.item = res[0];
           }
@@ -54,6 +59,7 @@ export class SchoolRepository implements ISchoolRepository {
         });
     });
   }
+
   modifySchool(body: ISchool): PromiseLike<IResult> {
     return this.dbConnect((dbConn: any, deferred: Q.Deferred<{}>) => {
       const request = new sql.Request(dbConn);
@@ -67,6 +73,7 @@ export class SchoolRepository implements ISchoolRepository {
         .execute("[Catalogo].[UPD_ESCUELA_SP]")
         .then((data: sql.IProcedureResult<any>) => {
           const res = data.recordset;
+          // Validacion de la respuesta del procedimiento
           if (res && res.length > 0 && res[0].modificado) {
             result.item = res[0];
           }
@@ -80,6 +87,7 @@ export class SchoolRepository implements ISchoolRepository {
         });
     });
   }
+
   removeSchool(body: ISchool): PromiseLike<IResult> {
     return this.dbConnect((dbConn: any, deferred: Q.Deferred<{}>) => {
       const request = new sql.Request(dbConn);
@@ -89,6 +97,7 @@ export class SchoolRepository implements ISchoolRepository {
         .execute("[Catalogo].[DEL_ESCUELA_SP]")
         .then((data: sql.IProcedureResult<any>) => {
           const res = data.recordset;
+          // Validacion de la respuesta del procedimiento
           if (res && res.length > 0 && res[0].eliminado) {
             result.item = res[0];
           }
@@ -107,10 +116,12 @@ export class SchoolRepository implements ISchoolRepository {
     return this.dbConnect((dbConn: any, deferred: Q.Deferred<{}>) => {
       const request = new sql.Request(dbConn);
       let result: IResult = { error: "", rows: [], item: null };
+      // Ejecución de un procedimiento sin parametros
       request
         .execute("[Catalogo].[SEL_ESCUELA_SP]")
         .then((data: sql.IProcedureResult<any>) => {
           const res = data.recordset;
+          // Validacion de la respuesta del procedimiento
           if (res && res.length > 0) {
             result.rows = res;
           }
