@@ -26,22 +26,23 @@ export class SchoolComponent implements OnInit {
   }
 
   getSchoolList() {
-    this.schoolService.getSchoolList().subscribe((response: IResponse) => {
-      console.log("respuesta", response);
-      if (response && response.rows && response.rows.length) {
-        this.schoolList = response.rows;
+    this.schoolService.getSchoolList().subscribe(
+      (response: IResponse) => {
+        if (response && response.rows && response.rows.length) {
+          this.schoolList = response.rows;
+        }
+      },
+      (error) => {
+        console.log(error);
       }
-    });
+    );
   }
 
   addSchool() {
-    console.log("add school");
     this.router.navigate(["/school-add"]);
   }
 
   modify(school: ISchool) {
-    console.log("add school", school);
-
     let extras: NavigationExtras = {
       queryParams: {
         school: JSON.stringify(school),
@@ -51,10 +52,8 @@ export class SchoolComponent implements OnInit {
   }
 
   delete(idSchool: number) {
-    this.schoolService
-      .removeSchool(idSchool)
-      .subscribe((response: IResponse) => {
-        console.log("respuesta", response);
+    this.schoolService.removeSchool(idSchool).subscribe(
+      (response: IResponse) => {
         if (response && response.item && response.item.eliminado) {
           this.getSchoolList();
         } else {
@@ -68,6 +67,10 @@ export class SchoolComponent implements OnInit {
             }
           );
         }
-      });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

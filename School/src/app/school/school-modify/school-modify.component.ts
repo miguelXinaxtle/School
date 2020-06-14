@@ -25,7 +25,6 @@ export class SchoolModifyComponent implements OnInit {
     const school = this.activatedRoute.snapshot.queryParamMap.get("school");
     if (school) {
       this.school = JSON.parse(school);
-      console.log(this.school);
     }
     this.formRegisterGroup = formBuilder.group({
       nombre: [
@@ -74,10 +73,8 @@ export class SchoolModifyComponent implements OnInit {
       municipio: this.formRegisterGroup.get("municipio").value,
     };
 
-    this.schoolService
-      .modifySchool(registerData)
-      .subscribe((response: IResponse) => {
-        console.log(response);
+    this.schoolService.modifySchool(registerData).subscribe(
+      (response: IResponse) => {
         if (response && response.item && response.item.modificado) {
           this.snackBar.open("Escuela modificada correctamente", "Mensaje", {
             duration: 3000,
@@ -94,6 +91,10 @@ export class SchoolModifyComponent implements OnInit {
             }
           );
         }
-      });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

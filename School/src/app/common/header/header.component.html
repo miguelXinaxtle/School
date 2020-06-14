@@ -1,29 +1,5 @@
 <mat-toolbar class="menu" *ngIf="authService.isAutenticated">
-  <!-- <div class="menu-botones" *ngIf="authService.isAutenticated">
-    {{ authService.user?.correo }}
-  </div> -->
-
   <span style="flex: 1 1 auto;"></span>
-  <!-- <button
-    mat-button
-    mat-raised-button
-    *ngIf="authService.isAutenticated"
-    routerLink="/home"
-  >
-    <i class="material-icons">
-      home
-    </i>
-  </button> -->
-
-  <!-- <button
-    mat-button
-    matTooltip="Iniciar sesión"
-    mat-raised-button
-    *ngIf="!authService.isAutenticated"
-    routerLink="/login"
-  >
-    Login
-  </button> -->
   <div class="menu-botones">
     {{ authService.user?.correo }}
   </div>
@@ -36,17 +12,4 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Salir
   </button>
-
-  <!-- <button
-    mat-button
-    matTooltip="Cerrar sesión"
-    *ngIf="authService.isAutenticated"
-    mat-raised-button
-    (click)="authService.logout()"
-    routerLink="/splash"
-  >
-    <i class="material-icons">
-      exit_to_app
-    </i>
-  </button> -->
 </mat-toolbar>

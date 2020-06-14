@@ -55,19 +55,17 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(loginData).subscribe(
       (response: IResponse) => {
-        console.log(response);
         if (response && response.item && response.item.idUsuario) {
           localStorage.setItem(
             Settings.KEY_USER,
             JSON.stringify(response.item)
           );
-          console.log("vamonos para home");
           this.router.navigate(["/home"]);
         } else {
           this.snackBar.open(
             response && response.error && response.error.length
               ? response.error
-              : "Ocurrio un erro en el servicio",
+              : "Ocurrio un error en el servicio",
             "Mensaje",
             {
               duration: 3000,

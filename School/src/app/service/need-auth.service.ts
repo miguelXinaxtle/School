@@ -9,9 +9,6 @@ export class NeedAuthService {
   constructor(public authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    console.log("canActivate");
-    console.log(this.authService.isAutenticated);
-
     if (!this.authService.isAutenticated) {
       this.router.navigate(["splash"]);
       return false;

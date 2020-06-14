@@ -67,10 +67,8 @@ export class SchoolAddComponent implements OnInit {
       municipio: this.formRegisterGroup.get("municipio").value,
     };
 
-    this.schoolService
-      .addSchool(registerData)
-      .subscribe((response: IResponse) => {
-        console.log(response);
+    this.schoolService.addSchool(registerData).subscribe(
+      (response: IResponse) => {
         if (response && response.item && response.item.idEscuela) {
           this.snackBar.open("Escuela registrada correctamente", "Mensaje", {
             duration: 3000,
@@ -87,6 +85,10 @@ export class SchoolAddComponent implements OnInit {
             }
           );
         }
-      });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
