@@ -7,9 +7,6 @@ import {
 } from "routing-controllers";
 import { Container, ContainerInstance } from "typedi";
 import { ErrorCatcherMiddleware } from "./helpers/errorCatcherMiddleware";
-import { IAppRepository, AppService } from "./data/interfaces/IApp.Repository";
-import { AppRepository } from "./data/repository/app.repository";
-import { AppController } from "./controllers/app.controller";
 import { SecurityService } from "./data/interfaces/security.service";
 import { SecurityRepository } from "./data/repository/security.repository";
 import { SecurityController } from "./controllers/security.controller";
@@ -20,14 +17,13 @@ import { async } from "q";
 import { IToken } from "./models/token";
 import { IResult } from "./models/result";
 
-Container.set(AppService, Container.get(AppRepository));
 Container.set(SecurityService, Container.get(SecurityRepository));
 Container.set(SchoolService, Container.get(SchoolRepository));
 
 useContainer(Container);
 const app = createExpressServer({
   cors: true,
-  controllers: [AppController, SecurityController, SchoolController],
+  controllers: [SecurityController, SchoolController],
   middlewares: [ErrorCatcherMiddleware],
   authorizationChecker: async (action: Action, roles: string[]) => {
     const token = action.request.headers["authorization"];
