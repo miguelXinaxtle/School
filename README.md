@@ -16,3 +16,6 @@ npm install
 
 Ejecutar en desarrollo
 ng server
+
+Ejecutar en ambiente de producción
+ng serve --port 9100 --host 0.0.0.0
