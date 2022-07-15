@@ -1,0 +1,107 @@
+.cardHeight {
+    height: 850px !important;
+}
+
+.card-torax {
+    padding: 1.5rem;
+}
+
+.derecha {
+    float: right;
+}
+
+.boton-primario {
+    border-radius: 50px;
+    background-color: blue;
+    color: #fff;
+    margin-left: 15px;
+    height: 100%;
+    text-align: center;
+    display: table;
+}
+
+.texto-fecha {
+    /* border-radius: 50px; */
+    /* background-color: blue; */
+    color: blue;
+    margin-left: 15px;
+    height: 100%;
+    text-align: center;
+    display: table;
+}
+
+.boton-secundario {
+    border-radius: 50px;
+    background-color: #fff;
+    color: blue;
+    margin-left: 15px;
+    height: 100%;
+    text-align: center;
+    display: table;
+}
+
+.boton-tercero {
+    border-radius: 50px;
+    background-color: #fff;
+    color: rgb(244, 178, 133);
+    margin-left: 15px;
+    height: 100%;
+}
+
+::ng-deep .dx-datagrid-rowsview .dx-row > td,
+.dx-datagrid-rowsview .dx-row > tr > td {
+    background-color: #fff;
+    color: #495F88;
+    font-size: 15px;
+    font-family: poppins, sans-serif;
+  /*  font-size: 16px;
+    font-weight: bold;*/
+}
+
+::ng-deep .dx-datagrid .dx-row-alt > td,
+.dx-datagrid .dx-row-alt > tr > td {
+    /*background-color: #f8d3ba;*/
+    background-color: #FFEFF0;
+    color: #495F88;
+    font-size: 15px;
+    font-family: poppins, sans-serif;
+  /*
+    font-weight: bold;*/
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    font-size: 16px;
+    color:#EE3C55;
+    font-family: poppins, sans-serif;
+   /*
+
+    font-weight: bold;*/
+}
+    
+::ng-deep .mat-tab-list .mat-tab-labels {
+    color:#1C386B;
+    font-family: poppins, sans-serif !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.boton-descargar_reporte {
+    border-radius: 50px;
+    background-color: #EE3C55;
+    color: #fff;
+    margin-left: 15px; 
+    height: 100%;
+}
+
+.boton-secundario {
+    border-radius: 50px;
+    background-color: #fff;
+    color: #EE3C55;
+    margin-left: 15px; 
+    height: 100%;
+    text-align: center; 
+    display: table;
+    border-color: #EE3C55;
+    
+}
+    

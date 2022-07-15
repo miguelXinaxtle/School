@@ -1,0 +1,937 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Contratar un seguro</h4>
+                    <p class="mb-0">Cotizar un seguro al mejor precio disponible</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Seguros</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+           <!-- <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i class="las la-download scale5 mr-2"></i>Descargar Reporte</a>
+            <a [routerLink]="['/admin/mantenimiento-seguimiento']" class="btn btn-outline-primary btn-rounded mb-3 mr-3"><i class="las la-check-square scale5 mr-2"></i>Aprobar Pendientes</a>-->
+        </div>
+
+        <div class="card overflow-hidden card-back">
+            <div class="card-body p-0">
+
+                <div class="row card-torax">
+                    <div class="col-12">
+                        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+                            <mat-step [stepControl]="firstFormGroup">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <h4 class="card-title">Cotizar Seguro</h4>
+                                        <br>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Nombre*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Correo electrónico*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Tel, Celular*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            Genero* &nbsp;&nbsp;
+                                            <button type="button"
+                                                class="btn btn-rounded btn-primary">F</button>&nbsp;&nbsp;
+                                            <button type="button" class="btn btn-rounded btn-primary">M</button>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="input-group">
+                                                <input class="form-control" placeholder="yyyy-mm-dd" name="dp"
+                                                    [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary calendar"
+                                                        (click)="d.toggle()" type="button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Código Postal*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Año*</option>
+                                                    <option>Marca*</option>
+                                                    <option>Modelo*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Marca*</option>
+                                                    <option>Modelo*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Modelo*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Versión*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br>
+                                <button class="btn btn-primary btn-rounded mr-3 mb-3 text-white botoFinal">
+                                    <mat-icon style="font-size: 18px;vertical-align: middle;"> search</mat-icon>
+                                    Buscar en mejor precio
+                                </button>
+                            </mat-step>
+
+                            <mat-step [stepControl]="secondFormGroup">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <h4 class="card-title">Selccionar Seguro</h4><br>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <select class="form-control form-control-lg default-select ">
+                                                            <option>Selecciona una cobertura</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <select class="form-control form-control-lg default-select ">
+                                                            <option>Selecciona una modalidad de pago</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group"
+                                                        style="text-align: center; color: darkblue;">
+                                                        <br><br>
+                                                        <h5>Todas las opciones<br>
+                                                            cuentan con las<br>
+                                                            siguientes coberturas</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-8 col-lg-8">
+                                            <div class="row table_titulo">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-5">
+                                                    DAÑOS MATERIALES
+                                                </div>
+                                                <div class="col-2">
+                                                    AMPLIA
+                                                </div>
+                                                <div class="col-2">
+                                                    LIMITADA
+                                                </div>
+                                                <div class="col-2">
+                                                    BÁSICA
+                                                </div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    Valor comercial
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;">clear
+                                                    </mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;">clear
+                                                    </mat-icon>
+                                                </div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    5% Deducible
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;">clear
+                                                    </mat-icon>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row table_titulo">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">ROBO TOTAL</div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    Valor comercial
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    10% Deducible
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row table_titulo">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">RC</div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    3,000,000.00
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row table_titulo">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">GASTOS MEDICOS</div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                                <div class="col-2"></div>
+                                            </div>
+                                            <div class="row table_row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    60,000 x Ocupante
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row table_titulo">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    DEFENSA LEGAL
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row table_titulo">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">
+                                                    ASISTENCIA EN VIAJES
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                                <div class="col-2">
+                                                    <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                                        class="table_titulo">done</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <div class="row">
+                                    <div class="col-4 col-4"></div>
+                                    <div class="col-4 col-4">
+                                        <ngb-carousel class="default-carousel card">
+                                            <ng-template ngbSlide>
+                                                <div class="picsum-img-wrapper">
+                                                    <div class="card overflow-hidden">
+                                                        <div class="card-header align-items-start border-0 pb-0 mb-2">
+                                                            <div class="col-12">
+                                                                <img src="./../../../assets/images/seguros/gnp.png"
+                                                                    class="icono2" style="height: 100px;">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="card-body p-0" style="text-align: center;">
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <h2 class="table_row">$ 16,089.39</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">Costo Total</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_titulo">Ver cobertura</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">No aplica pago referenciado
+                                                                        / Ventanilla</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-check table_row">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="gridRadios" value="option1">
+                                                                        <label class="form-check-label">
+                                                                            Contratar
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                            <ng-template ngbSlide>
+                                                <div class="picsum-img-wrapper">
+                                                    <div class="card overflow-hidden">
+                                                        <div class="card-body p-0" style="text-align: center;">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <img src="./../../../assets/images/seguros/qualitas.png"
+                                                                        class="icono2" style="height: 150px;">
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <h2 class="table_row">$ 16,442.41</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">Costo Total</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_titulo">Ver cobertura</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">No aplica pago referenciado
+                                                                        / Ventanilla</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-check table_row">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="gridRadios" value="option1">
+                                                                        <label class="form-check-label">
+                                                                            Contratar
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                    </div>
+
+                                                </div>
+                                            </ng-template>
+                                            <ng-template ngbSlide>
+                                                <div class="picsum-img-wrapper">
+                                                    <div class="card overflow-hidden">
+                                                        <div class="card-header align-items-start border-0 pb-0 mb-2">
+                                                            <div class="col-12">
+                                                                <img src="./../../../assets/images/seguros/mapfre.png"
+                                                                    class="icono2" style="width: 250px;">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="card-body p-0" style="text-align: center;">
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <h2 class="table_row">$ 18,089.39</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">Costo Total</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_titulo">Ver cobertura</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-12">
+                                                                    <span class="table_row">No aplica pago referenciado
+                                                                        / Ventanilla</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-check table_row">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="gridRadios" value="option1">
+                                                                        <label class="form-check-label">
+                                                                            Contratar
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                    </div>
+
+                                                </div>
+                                            </ng-template>
+                                        </ngb-carousel>
+                                    </div>
+                                    <div class="col-3 col-3"></div>
+                                </div>
+                                <br>
+                                <button class="btn btn-primary btn-rounded mr-3 mb-3 text-white botoFinal" style="width: 243px;">
+                                    <mat-icon style="font-size: 18px;vertical-align: middle;"> navigate_next</mat-icon>
+                                    Continuar
+                                </button>
+                            </mat-step>
+
+                            <mat-step [stepControl]="firstFormGroup">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <h4 class="card-title">Datos Personales</h4>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Nombre*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Apellido Paterno*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Apellido Materno*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            Genero* &nbsp;&nbsp;
+                                            <button type="button"
+                                                class="btn btn-rounded btn-primary">F</button>&nbsp;&nbsp;
+                                            <button type="button" class="btn btn-rounded btn-primary">M</button>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="input-group">
+                                                <input class="form-control" placeholder="yyyy-mm-dd" name="dp2"
+                                                    [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary calendar"
+                                                        (click)="d2.toggle()" type="button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="RFC">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Tel. Celular*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Teléfono">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Estado Civil*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Calle*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Número externo*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Numero interior">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Código postal*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-default "
+                                                    placeholder="Ciudad*">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg default-select ">
+                                                    <option>Colonia*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br>
+                                <button class="btn btn-primary btn-rounded mr-3 mb-3 text-white botoFinal"  style="width: 243px;">
+                                    <mat-icon style="font-size: 18px;vertical-align: middle;"> navigate_next</mat-icon>
+                                    Continuar
+                                </button>
+                            </mat-step>
+
+                            <mat-step [stepControl]="firstFormGroup">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <h4 class="card-title">Datos del Vehículo</h4>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-xl-3 col-lg-3" style="text-align: center;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span class="table_row">Conductor</span> <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h5 class="table_row">Carlos Sánchez Garcia</h5> <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-check table_row">
+                                                        <input class="form-check-input" type="radio" name="gridRadios"
+                                                            value="option1">
+                                                        <label class="form-check-label">
+                                                            Otro conductor
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Número de serie*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Placas">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="col-xl-3 col-lg-3" style="text-align: center;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4 class="table_row">Todas las cuentas quedaran asociadas a este
+                                                        correo</h4><br>
+                                                    <h4 class="table_titulo">carlos.sanchez@gmail.com</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br>
+                                <button class="btn btn-primary btn-rounded mr-3 mb-3 text-white botoFinal"  style="width: 243px;">
+                                    <mat-icon style="font-size: 18px;vertical-align: middle;"> navigate_next</mat-icon>
+                                    Continuar
+                                </button>
+                            </mat-step>
+
+
+                            <mat-step [stepControl]="firstFormGroup">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="card-title">Datos del Pago</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4">
+                                        <br><br><br>
+                                        <img src="./../../../assets/images/seguros/QualitasC.png" class="icono2"
+                                            style="height: 150px;">
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4" style="text-align: center;">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <span class="table_row" style="font-size: 18px;">El total que será
+                                                    cargado a tu tarjeta es
+                                                    de</span><br><br>
+                                                <h2 class="table_row">$16,442.41</h2>
+                                                <span class="table_row" style="font-size: x-small;">Costo
+                                                    Total</span><br><br>
+                                                <span class="table_row" style="font-size: 18px;">Por la compra del
+                                                    paquete AMPLIA</span><br><br><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-2">
+                                                <img src="./../../../assets/images/seguros/mastercard.png"
+                                                    style="height: 30px;"><br>
+                                                <div class="form-check table_row">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option2">
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="./../../../assets/images/seguros/visa.png"
+                                                    style="height: 30px;"><br>
+                                                <div class="form-check table_row">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option2">
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="./../../../assets/images/seguros/aexpreess.png"
+                                                    style="height: 30px;"><br>
+                                                <div class="form-check table_row">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option2">
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="./../../../assets/images/seguros/paypal.png"
+                                                    style="height: 30px;"><br>
+                                                <div class="form-check table_row">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option2">
+                                                </div>
+                                            </div>
+                                            <div class="col-2"></div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Nombres*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Apellido Paterno*">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Apellido Materno*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Número de tarjeta*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="Vencimiento*">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-default "
+                                                            placeholder="CVV*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <select class="form-control form-control-lg default-select ">
+                                                            <option>Seleccionar Banco*</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-2"></div>
+                                    <div class="col-10 table_row">
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckBox1"
+                                                required>
+                                            <label class="custom-control-label" for="customCheckBox1">Mi vehículo no es
+                                                utilizado ni será utilizado para prestar servicios de entrega por
+                                                paquetería, a domicilio y/o similares.</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckBox1"
+                                                required>
+                                            <label class="custom-control-label" for="customCheckBox1">No he recibido
+                                                indemnización alguna de parrte de alguna aseguradora derivado de la
+                                                pérdida total de mi vehículo.</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckBox1"
+                                                required>
+                                            <label class="custom-control-label" for="customCheckBox1">Mi vehículo no se
+                                                encuentra chocado o siniestrado de alguna forma.</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckBox1"
+                                                required>
+                                            <label class="custom-control-label" for="customCheckBox1">He leido y <span
+                                                    class="table_titulo">acepto el Aviso de privacidad.</span></label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckBox1"
+                                                required>
+                                            <label class="custom-control-label" for="customCheckBox1">Estoy de acuerdo
+                                                con las condiciones generales y términos de uso.</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <button class="btn btn-warning btn-rounded mr-3 mb-3 text-white botoFinal"  style="width: 243px;">
+                                    <mat-icon style="font-size: 18px;vertical-align: middle;"> navigate_next</mat-icon>
+                                    Continuar
+                                </button>
+                            </mat-step>
+
+                            <mat-step [stepControl]="firstFormGroup">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="card-title">Datos del Pago</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4" style="text-align: center;">
+                                        <br><br>
+                                        <img src="./../../../assets/images/seguros/QualitasC.png" class="icono2"
+                                            style="height: 150px;">
+                                        <br>
+                                        <hr>
+                                        <br>
+                                        <h2 class="table_row">$16,442.41</h2>
+                                        <span class="table_row" style="font-size: x-small;">Costo Total</span><br><br>
+                                        <span class="table_titulo">Ver
+                                            cobertura</span><br><br>
+                                        <span class="table_row" style="font-size: 8px;">No aplica para pago referneciado
+                                            / Ventanilla</span><br><br><br>
+                                        <hr>
+                                    </div>
+                                    <div class="col-8">
+                                        <iframe width="900px" height="600px" src="../../../assets/documents/Poliza-qualitas.pdf"></iframe>
+                                    </div>
+                                </div>
+                                <br>
+                               
+                            </mat-step>
+                        </mat-horizontal-stepper>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+</div>

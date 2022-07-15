@@ -1,0 +1,16 @@
+.card{
+    padding: 20px;
+}
+.card-back{
+    background-color: #fafafa;
+}
+.titulo{
+    font-size: 40px;
+    color: darkblue;
+}
+
+.icono{
+    display: block;
+    margin: 0px auto;
+    height: 180px;
+}

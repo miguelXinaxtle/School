@@ -1,0 +1,198 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class='col-sm-12 col-md-12 col-xl-12'>
+                <button class="btn btn-rounded float-right" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-danger">more_horiz</mat-icon>
+                </button>
+                <button class="btn btn-rounded float-right mr-2" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-danger">create</mat-icon>
+                    Editar
+                </button>
+            </div>
+        </div>
+        <div class="card overflow-hidden">
+            <div class="card-header align-items-start border-0 pb-0 mb-2">
+                <div class="col-6">
+                    <span>Datos de tu tarjeta</span>
+                </div>
+                <div class="col-6">
+                    <span>Requieres factura</span>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <form class="row card-torax mr-3 ml-3 mt-4 mb-4" [formGroup]="form">
+                    <div class="col-6 border-right">
+                        <div class="row">
+                            <div class='col-sm-12 col-md-12 col-xl-12 mb-2'>
+                                <mat-label>Total a pagar </mat-label>
+                                <strong>{{ form.value.totalPagar | currency }}</strong>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12'>
+                                <mat-form-field>
+                                    <mat-label>No. Tarjeta*</mat-label>
+                                    <input matInput formControlName="numTarjeta" placeholder="No. Tarjeta"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.numTarjeta.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12'>
+                                <mat-label class="mr-4">Vence</mat-label>
+                                <mat-form-field style="width: 40%;" class="mr-2">
+                                    <mat-label>Mes</mat-label>
+                                    <input matInput type="number" formControlName="venceMes" placeholder="Mes"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.venceMes.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                                <mat-form-field style="width: 40%;">
+                                    <mat-label>Año</mat-label>
+                                    <input matInput type="number" formControlName="venceAnio" placeholder="Año"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.venceAnio.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12'>
+                                <mat-form-field>
+                                    <mat-label>Núm. Seguridad(CVV)*</mat-label>
+                                    <input matInput formControlName="numSeguridad" placeholder="Nún. Seguridad(CVV)*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.numSeguridad.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='d-flex justify-content-center align-items-center mt-4' style="width: 100%;">
+                                <label class="radio-inline d-flex flex-column justify-content-center align-items-center">
+                                    <img src="assets/icons/mastercard.svg" class="mb-2" alt="">
+                                    <input type="radio" name="optradio" value="1">
+                                </label>
+                                <label class="radio-inline d-flex flex-column justify-content-center align-items-center">
+                                    <img src="assets/icons/visa.svg" class="mb-2" alt="">
+                                    <input type="radio" name="optradio" value="2">
+                                </label>
+                                <label class="radio-inline d-flex flex-column justify-content-center align-items-center">
+                                    <img src="assets/icons/american-express.svg" class="mb-2" alt="">
+                                    <input type="radio" name="optradio" value="3">
+                                </label>
+                                <label class="radio-inline d-flex flex-column justify-content-center align-items-center">
+                                    <img src="assets/icons/paypal.svg" class="mb-2" alt="">
+                                    <input type="radio" name="optradio" value="4">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <mat-label>Datos de facturación</mat-label>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Nombre*</mat-label>
+                                    <input matInput formControlName="nombre" placeholder="Nombre*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.nombre.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Apellidos*</mat-label>
+                                    <input matInput formControlName="apellidos" placeholder="Apellidos*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.apellidos.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>RFC*</mat-label>
+                                    <input matInput formControlName="rfc" placeholder="RFC*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.rfc.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Tel. Fijo</mat-label>
+                                    <input matInput formControlName="telFijo" placeholder="Tel. Fijo"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.telFijo.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Celular*</mat-label>
+                                    <input matInput formControlName="cel" placeholder="Celular*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.cel.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Direccion*</mat-label>
+                                    <input matInput formControlName="direccion" placeholder="Direccion*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.direccion.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Email*</mat-label>
+                                    <input matInput formControlName="email" placeholder="Email*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.email.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Pais*</mat-label>
+                                    <input matInput formControlName="pais" placeholder="Pais*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.pais.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Municipio*</mat-label>
+                                    <input matInput formControlName="municipio" placeholder="Municipio*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.municipio.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Ciudad*</mat-label>
+                                    <input matInput formControlName="ciudad" placeholder="Ciudad*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.ciudad.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Código postal*</mat-label>
+                                    <input matInput formControlName="cp" placeholder="Código postal*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.cp.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-form-field>
+                                    <mat-label>Nacionalidad*</mat-label>
+                                    <input matInput formControlName="nacionalidad" placeholder="Nacionalidad*"
+                                        oninput="this.value = this.value.toUpperCase()">
+                                    <mat-error *ngIf="form.controls.nacionalidad.invalid">Campo requerido</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-danger btn-rounded mr-3 mb-3 text-white">
+                    Proceder al pago
+                    <mat-icon style="font-size: 18px;vertical-align: middle;"> arrow_forward_ios</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

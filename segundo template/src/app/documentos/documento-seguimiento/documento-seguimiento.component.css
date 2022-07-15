@@ -1,0 +1,64 @@
+.roundEstadoGreen {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 25px;
+    background-color: #c1f4c3;
+    color: #2ad82b;
+    font-size: 12px;
+    font-weight: bold;
+    border-color: #2ad82b;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.roundEstadoRed {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 25px;
+    background-color: #ffcbcc;
+    color: #ff5361;
+    font-size: 12px;
+    font-weight: bold;
+    border-color: #ff5361;
+    border-style: solid;
+    border-width: 1px;
+}
+
+::ng-deep .dx-datagrid .dx-row-alt > td,
+.dx-datagrid .dx-row-alt > tr > td {
+    /*background-color: #f8d3ba;*/
+    background-color: #ffeff0;
+    color: #495f88;
+    font-size: 15px;
+    font-family: poppins, sans-serif;
+    /*
+    font-weight: bold;*/
+}
+
+.example-container {
+    height: 550px;
+    overflow: auto;
+}
+
+.imagenBanner {
+    width: 200px;
+    height: 42px;
+    float: right;
+}
+
+.titulo {
+    color: #7586a5;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.texto {
+    color: #1c386b;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}

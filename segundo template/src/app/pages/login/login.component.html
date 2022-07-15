@@ -1,0 +1,50 @@
+<div class="authincation h-100 back">
+    <div class="container vh-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <div class="text-center mb-3">
+                                    <a [routerLink]="['/admin/index']"><img src="assets/images/brand/logo-full.png" alt=""></a>
+                                </div>
+                                <h4 class="text-center mb-4">Inicie sesión en su cuenta</h4>
+                                <form >
+                                    <div class="form-group">
+                                        <label class="mb-1"><strong>Correo electrónico</strong></label>
+                                        <input type="email" class="form-control" value="hola@ejemplo.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1"><strong>Contraseña</strong></label>
+                                        <input type="password" class="form-control" value="Password">
+                                    </div>
+                                    <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                        <div class="form-group">
+                                           <div class="custom-control custom-checkbox ml-1">
+                                                <input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
+                                                <label class="custom-control-label" for="basic_checkbox_1">Mantener mi sesión iniciada</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <a [routerLink]="['/page-forgot-password']">Olvidé mi contraseña</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button [routerLink]="['/admin/index']" class="btn btn-primary btn-block">Acceder</button>
+                                    </div>
+                                </form>
+                                <div class="new-account mt-3">
+                                    <p>¿Aún no tienes una cuenta? <a class="text-primary" [routerLink]="['/page-register']">Registrarse</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <img src="../../../assets/images/brand/login-pic.png" alt="Login pic" class="login-pic">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class='col-sm-12 col-md-12 col-xl-12'>
+                <button class="btn btn-rounded float-right" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-danger">more_horiz</mat-icon>
+                </button>
+                <button class="btn btn-rounded float-right mr-2" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-danger">create</mat-icon>
+                    Editar
+                </button>
+                <button class="btn btn-rounded float-right mr-2" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-danger">remove_red_eye
+                    </mat-icon>
+                    Ver mis facturas
+                </button>
+            </div>
+        </div>
+
+        <div class="card overflow-hidden card-back">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-6 titulo">
+                        Pagos y tramites
+                    </div>
+                    <div class="col-6">
+                        <img src="./../../../assets/images/logos/logo_ultracard.png" class="icono2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <dx-data-grid [dataSource]="citas" [remoteOperations]="false"
+                            [masterDetail]="{ enabled: true, template: 'detail' }" keyExpr="numeroOrden"
+                            [allowColumnReordering]="true" [allowColumnResizing]="true" [rowAlternationEnabled]="true"
+                            [showBorders]="false" [showColumnLines]="false" [showRowLines]="true"
+                            (onContentReady)="contentReady($event)" (onExporting)="onExporting($event)">
+                            <dxo-paging [pageSize]="5"></dxo-paging>
+                            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5, 25, 50, 100]"
+                                [visible]="true" [showPageSizeSelector]="true" [showInfo]="true"
+                                [showNavigationButtons]="true">
+                            </dxo-pager>
+                            <dxo-sorting mode="multiple"></dxo-sorting>
+                            <dxo-filter-row [visible]="true"></dxo-filter-row>
+                            <dxo-header-filter [visible]="true"></dxo-header-filter>
+                            <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true" placeholder="Buscar...">
+                            </dxo-search-panel>
+                            <dxo-group-panel [visible]="true" placeholder="Arrastre un campo aquí para agrupar...">
+                            </dxo-group-panel>
+                            <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+                            <dxo-selection mode="simple"></dxo-selection>
+
+                            <dxi-column caption="Núm. Orden" dataField="numeroOrden" dataType="string">
+                            </dxi-column>
+                            <dxi-column caption="Citas anteriores" dataField="citas" dataType="string">
+                            </dxi-column>
+                            <dxi-column caption="Fecha" dataField="fecha" dataType="string"></dxi-column>
+                            <dxi-column caption="Estado" dataField="estado" dataType="string" cellTemplate="estado"></dxi-column>
+                            <dxi-column caption="Costo" dataField="monto" dataType="string"></dxi-column>
+                            <dxi-column caption="Auto" dataField="auto" dataType="string"></dxi-column>
+                            <dxi-column caption="Facturas" dataField="factura" dataType="string" cellTemplate="estatus">
+                            </dxi-column>
+                            <dxo-summary>
+                                <dxi-total-item column="numeroOrden" summaryType="count" displayFormat="Total: {0}">
+                                </dxi-total-item>
+                            </dxo-summary>
+                            <dxo-export [enabled]="true" [allowExportSelectedData]="true"></dxo-export>
+                            <div *dxTemplate="let data of 'estatus'">
+                                <div style="text-align: center;">
+                                    <a [routerLink]="['/admin/orden-consulta']"> <img src="../../../assets/images/ordenes/download.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div *dxTemplate="let data of 'estado'">
+                                <mat-chip-list aria-label="Fish selection">
+                                    <mat-chip *ngIf="data.value == 'VIGENTE'" style="background-color: green; color: honeydew;">{{data.value}}</mat-chip>
+                                    <mat-chip *ngIf="data.value == 'VENCIDA'" style="background-color: red; color: honeydew;">{{data.value}}</mat-chip>
+                                </mat-chip-list>
+                            </div>
+
+
+                            <div *dxTemplate="let data of 'detail'">
+                                <dx-data-grid #griddetail keyExpr="numeroOrden" id="gridContainerDetail"
+                                    [dataSource]="partidas" [remoteOperations]="false" [allowColumnReordering]="true"
+                                    [allowColumnResizing]="true" [rowAlternationEnabled]="true" [showBorders]="false"
+                                    [showColumnLines]="false" [showRowLines]="true"
+                                    (onContentReady)="contentReady($event)" (onExporting)="onExporting($event)">
+                                    <dxi-column caption="Foto Principal" dataField="foto" cellTemplate="foto"
+                                        dataType="string">
+                                    </dxi-column>
+                                    <dxi-column caption="Cantidad" dataField="cantidad" dataType="string">
+                                    </dxi-column>
+                                    <dxi-column caption="Descripción" dataField="descripcion" dataType="string">
+                                    </dxi-column>
+                                    <dxi-column caption="Estatus" dataField="estatus" dataType="string">
+                                    </dxi-column>
+                                    <dxi-column caption="Total Costo" dataField="totalCosto" dataType="string">
+                                    </dxi-column>
+                                    <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5, 25, 50, 100]"
+                                        [visible]="true" [showPageSizeSelector]="true" [showInfo]="true"
+                                        [showNavigationButtons]="true">
+                                    </dxo-pager>
+                                    <dxo-sorting mode="multiple"></dxo-sorting>
+                                    <dxo-filter-row [visible]="true"></dxo-filter-row>
+                                    <dxo-header-filter [visible]="true"></dxo-header-filter>
+                                    <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"
+                                        placeholder="Buscar..."></dxo-search-panel>
+                                    <dxo-group-panel [visible]="true"
+                                        placeholder="Arrastre un campo aquí para agrupar...">
+                                    </dxo-group-panel>
+                                    <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+                                    <dxo-selection mode="multiple"></dxo-selection>
+
+                                    <dxo-summary>
+                                        <dxi-total-item column="foto" summaryType="count" displayFormat="Total: {0}">
+                                        </dxi-total-item>
+                                    </dxo-summary>
+                                    <dxo-export [enabled]="true" [allowExportSelectedData]="true"></dxo-export>
+
+                                    <div *dxTemplate="let data of 'foto'">
+                                        <div> {{data.value}}<img style="width: 30px; float: center;"
+                                                src="../../../assets/images/citas/foto.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </dx-data-grid>
+                            </div>
+                        </dx-data-grid>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

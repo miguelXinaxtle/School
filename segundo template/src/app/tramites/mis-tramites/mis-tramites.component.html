@@ -1,0 +1,248 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Mis Trámites</h4>
+                    <p class="mb-0">Lista de trámites disponibles</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Trámites</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+            <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i
+                    class="las la-hands-helping scale5 mr-2"></i>Ayuda para realizar trámites</a>
+            <a [routerLink]="['/admin/mantenimiento-seguimiento']"
+               class="btn btn-outline-primary btn-rounded mb-3 mr-3"><i class="las la-cart-plus scale5 mr-2"></i>Mis facturas</a>
+        </div>
+
+        <div class="card overflow-hidden card-back">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/multas.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Multas<br></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        &nbsp;&nbsp;Inicciar Tramite&nbsp;
+                                        <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                            class="text-danger">navigate_next</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/tenencia.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Tenencia<br></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        &nbsp;&nbsp;Inicciar Tramite&nbsp;
+                                        <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                            class="text-danger">navigate_next</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/verificacion.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Verificación</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        &nbsp;&nbsp;Inicciar Tramite&nbsp;
+                                        <mat-icon style="font-size: 18px;vertical-align: middle;"
+                                            class="text-danger">navigate_next</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/placas.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Cambio de Placas</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/propietario.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Cambio de Propietario</div></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/domicilio.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Cambio de Domicilio</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/refrendo.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row" ><div class="col-12 titulo2">Refrendo de Tarjeta de Circulación</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/reposicion.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo2">Reposición de Tarjeta de Circulación</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/baja_p.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Baja de Placas</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="./../../../assets/images/tramites/licencia.png" class="icono2"
+                                            style="height: 100px;">
+                                    </div>
+                                </div>
+                                <div class="row"><div class="col-12 titulo">Licencia de Conducir</div></div>
+                                <br>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-rounded btn-outline-primary botoFinal">
+                                        <img src="./../../../assets/images/tramites/alerta.png" style="height: 15px;">&nbsp;&nbsp;Instrucciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

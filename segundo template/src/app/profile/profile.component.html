@@ -1,0 +1,174 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>¡Hola!, Bienvenido de nuevo</h4>
+                    <p class="mb-0">Administración de perfil</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Perfil</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="profile card card-body px-3 pt-3 pb-0">
+                    <div class="profile-head">
+                        <div class="photo-content">
+                            <div class="cover-photo"></div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-photo">
+                                <img src="../../assets/images/profile/profile.png" class="img-fluid rounded-circle"
+                                     alt="">
+                            </div>
+                            <div class="profile-details">
+                                <div class="profile-name px-3 pt-2">
+                                    <h4 class="text-primary mb-0">Jorge García</h4>
+                                    <p>Administrador de flota</p>
+                                </div>
+                                <div class="profile-email px-2 pt-2">
+                                    <h4 class="text-muted mb-0">jorge.garcia@ejemplo.com</h4>
+                                    <p>Correo</p>
+                                </div>
+                                <div class="dropdown dropdown-no-icon ml-auto" ngbDropdown>
+                                    <a href="javascript:void(0);" class="btn btn-primary light sharp" ngbDropdownToggle
+                                       aria-expanded="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                             viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                                        <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i>
+                                            Ver bitácora
+                                        </li>
+                                        <li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i>
+                                            Agregar cuenta de usuario
+                                        </li>
+                                        <li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i>
+                                            Administrar cuentas de usuario
+                                        </li>
+                                        <li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> Bloquear
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <app-user-statistics></app-user-statistics>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-tab">
+                            <div class="custom-tab-1">
+                                <ul class="nav nav-tabs" ngbNav #nav="ngbNav">
+                                    <li class="nav-item" ngbNavItem="profile-settings"><a href="#profile-settings"
+                                                                                          data-toggle="tab"
+                                                                                          class="nav-link" ngbNavLink>Configuración</a>
+                                        <ng-template ngbNavContent>
+                                            <div id="profile-settings" class="tab-pane">
+                                                <div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Configuración de cuenta</h4>
+                                                        <form>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Correo electrónico</label>
+                                                                    <input type="email" placeholder="Introduzca un correo electrónico"
+                                                                           class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Contraseña</label>
+                                                                    <input type="password" placeholder="Introduzca una nueva contraseña"
+                                                                           class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Dirección</label>
+                                                                <input type="text" placeholder="Introduzca su dirección"
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Dirección 2</label>
+                                                                <input type="text"
+                                                                       placeholder="Línea 2 de direccion"
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Ciudad</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label>Estado</label>
+                                                                    <select class="form-control default-select"
+                                                                            id="inputState">
+                                                                        <option selected="">Seleccione uno...</option>
+                                                                        <option>Ciudad de México</option>
+                                                                        <option>Jalisco</option>
+                                                                        <option>Nuevo León</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label>Código postal</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                           id="gridCheck">
+                                                                    <label class="custom-control-label" for="gridCheck">
+                                                                        Recibir notificaciones</label>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary" type="submit">Actualizar
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+
+
+                                    </li>
+                                </ul>
+
+                                <div [ngbNavOutlet]="nav" class=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+	Content body end
+***********************************-->

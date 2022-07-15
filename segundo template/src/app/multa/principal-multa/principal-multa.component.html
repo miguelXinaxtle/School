@@ -1,0 +1,255 @@
+<!--<app-header-multa></app-header-multa>-->
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Consulta de multas</h4>
+                    <p class="mb-0">Consulta en tiempo real de multas por entidad federativa</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/gestoria-dashboard']">Gestoria</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Multa</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+            <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+<!--            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i class="las la-download scale5 mr-2"></i>Descargar Reporte</a>-->
+            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i class="las la-hands-helping scale5 mr-2"></i>Ayuda para realizar este trámite</a>
+            <a [routerLink]="['/admin/mantenimiento-seguimiento']" class="btn btn-outline-primary btn-rounded mb-3 mr-3"><i class="las la-cart-plus scale5 mr-2"></i>Contratar Adicionales</a>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="(mostrarDetalle)">
+            <div class="row" style="padding-bottom: 20px; padding-right: 5px;">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12" style="text-align: start;">
+                    <span class="roundEditar">
+                        <span style="font-size: 20px; color: #FB3648;">{{atras}}</span>
+                        <span style="padding-left: 10px;color: #1c386b;cursor: pointer;"
+                              (click)="regresar(false)"
+                        >Regresar</span>
+                    </span>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12" style="text-align: end;">
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header d-block">
+                <h4 class="card-title" style="color: #1c386b;">Consulta de adeudos</h4>
+            </div>
+            <div class="card-body" *ngIf="(!mostrarDetalle)">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                     style="padding-top: 100px;padding-bottom: 100px;">
+                    <div class="row">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 100px;padding-right: 50px;">
+                            <h4 style="color: #1c386b;">Entidad federativa</h4>
+                            <div class="form-group">
+                                <select class="form-control default-select">
+                                    <option>Ciudad de México</option>
+                                    <option>Estado de México</option>
+                                    <option>Jalisco</option>
+                                    <option>Nuevo León</option>
+                                    <option>Querétaro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 50px;padding-right: 100px;">
+                            <h4 style="color: #1c386b;">Placa</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Ingresar una placa">
+                            </div>
+                            <span style="padding-left: 20px;">Escriba el número de placa que desea buscar sin espacios</span>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row" style="padding-top: 30px;padding-bottom: 80px;" *ngIf="(!mostrarDetalle)">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                <span class="roundSpanOrange" (click)="irDetalleMulta()">
+                    <mat-icon style="position: absolute;">search</mat-icon>
+                    <span style="padding-left: 100px;padding-right: 40px;">Buscar</span>
+                </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body" *ngIf="(mostrarDetalle)">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                     style="padding-top: 30px;padding-bottom: 50px;">
+                    <div class="row" style="
+                    padding-bottom: 20px;
+                        border-bottom: 2px solid #ebebeb;">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12"
+                             style="
+                        border-right: 2px solid #ebebeb;
+                        padding-left: 100px;padding-right: 50px;
+                        ">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Placa
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        501XHP
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Folio
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        0305629312
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Fecha de infracción
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        19/06/2021
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 50px;padding-right: 100px;">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Motivo
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        Por no respetar los límites de velocidad establecidos en vías primarias,<br>
+                                        En caso de no haber señalamiento la velocidad máxima será de 70 kilómetros por hora
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Fundamentos
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        Artículo: 5, Fracción: 1, Inciso: 2
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Sanción
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        10 unidades de cuenta
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 50px;padding-right: 100px;">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Situación
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        PAGADA
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 20px;">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12"
+                             style="
+                        border-right: 2px solid #ebebeb;
+                        padding-left: 100px;padding-right: 50px;
+                        ">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Placa
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        501XHP
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Folio
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        7364498744
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Fecha de infracción
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        19/07/2021
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 50px;padding-right: 100px;">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Motivo
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        Por circular sin placas de matrícula o permiso provisional vigente
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Fundamentos
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        Artículo: 17, Fracción: 1, Inciso: 2
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Sanción
+                                    <br>
+                                    <span style="color: #1c386b;">
+                                        20 unidades de cuenta
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12"
+                             style="padding-left: 50px;padding-right: 100px;">
+                            <div class="row">
+                                <p style="color: #afbace;font-weight: 500;">
+                                    Situación
+                                    <br>
+                                    <span style="color: #1c386b;font-weight:600">
+                                        PAGADA
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>

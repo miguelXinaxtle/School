@@ -1,0 +1,36 @@
+.card{
+    padding: 20px;
+}
+.card-back{
+    background-color: #fafafa;
+}
+.titulo{
+    font-size: 20px;
+    color: darkblue;
+    text-align: center;
+}
+.titulo2{
+    font-size: 15px;
+    color: darkblue;
+    text-align: center;
+}
+
+.botoFinal{
+    font-size: 10px;
+    padding: 5px !important;
+    display: block;
+    margin: 0px 10%;
+}
+
+.table_titulo{
+    color: rgb(248, 69, 99);
+}
+
+.table_row{
+    color: darkblue;
+}
+
+.icono2{
+    display: block;
+    margin: 0px auto;
+}

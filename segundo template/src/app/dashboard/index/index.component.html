@@ -1,0 +1,120 @@
+<!--**********************************
+    Content body start
+***********************************-->
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-sm-12 ">
+                <div class="card">
+                    <div class="card-header d-block d-sm-flex border-0">
+                        <div>
+                            <h3 class="fs-20 text-black">Mis vehículos</h3>
+                                        <p class="mb-0 fs-12">Ubicación y telemetría de mis vehículos en tiempo real</p>
+                        </div>
+                    </div>
+                    <div class="card-body pb-2">
+                         <div class="row">
+                             <div class="col-xl-3 col-sm-3">
+                                 <app-lista-autos></app-lista-autos>
+                             </div>
+                             <div class="col-xl-3 col-sm-3">
+                                 <app-comportamiento></app-comportamiento>
+                             </div>
+                             <div class="col-xl-6 col-sm-6">
+                                 <app-mapa></app-mapa>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/formulario-cita']" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-body reducida">
+                            <img src="../../../assets/images/dashboard/cita.png" alt="ícono" class="img-button">
+                        </div>
+                        <div class="label text-black">
+                            <p class="card-text">Nueva Cita</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/mantenimiento-seguimiento']" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-body reducida">
+                            <img src="../../../assets/images/dashboard/historial.png" alt="ícono" class="img-button">
+                        </div>
+                        <div class="label text-black">
+                            <p class="card-text">Seguimiento</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/mis-tramites']" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-body reducida">
+                            <img src="../../../assets/images/dashboard/tramites.png" alt="ícono" class="img-button">
+                        </div>
+                        <div class="label text-black">
+                            <p class="card-text">Mis Trámites</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/seguros-cotizador']" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-body reducida">
+                            <img src="../../../assets/images/dashboard/seguro.png" alt="ícono" class="img-button">
+                        </div>
+                        <div class="label text-black">
+                            <p class="card-text">Consigue un seguro</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/mis-autos']" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-body reducida">
+                            <img src="../../../assets/images/dashboard/autos.png" alt="ícono" class="img-button">
+                        </div>
+                        <div class="label text-black">
+                            <p class="card-text">Mis Autos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <div class="card">
+                    <div class="card-body reducida">
+                        <img src="../../../assets/images/dashboard/compra.png" alt="ícono" class="img-button">
+                    </div>
+                    <div class="label text-black">
+                        <p class="card-text">Compra y Venta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-sm-2">
+                <a [routerLink]="['/admin/documento-dashboard']" aria-expanded="false">
+                <div class="card">
+                    <div class="card-body reducida">
+                        <img src="../../../assets/images/dashboard/documentos.png" alt="ícono" class="img-button">
+                    </div>
+                    <div class="label text-black">
+                        <p class="card-text">Documentos</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+    Content body end
+***********************************-->

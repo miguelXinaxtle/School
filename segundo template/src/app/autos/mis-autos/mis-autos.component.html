@@ -1,0 +1,324 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Mis Autos</h4>
+                    <p class="mb-0">Lista de autos registrados y su localización</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Autos</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+            <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i
+                    class="las la-hands-helping scale5 mr-2"></i>Adquirir GPS</a>
+            <a [routerLink]="['/admin/mantenimiento-seguimiento']"
+                class="btn btn-outline-primary btn-rounded mb-3 mr-3"><i class="las la-cart-plus scale5 mr-2"></i>Añadir
+                Auto</a>
+        </div>
+
+        <div class="card overflow-hidden card-back">
+            <div class="card-body p-0">
+                <!--
+                <div class="row">
+                    <div class="col-2 azul" style="font-weight: bold;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPS
+                    </div>
+                    <div class="col-10 alignBoton">
+                        <button class="btn btn-danger btn-rounded mr-3 mb-3 text-white">
+                            Adquirir GPS
+                        </button>
+                    </div>
+                </div>-->
+                <div class="row card-torax mr-3 ml-3">
+                    <div class="col-12 border-right">
+                        <!-- <input type="text" id="search" #search class="form-control input-rounded" placeholder="Domicilio"> -->
+                        <agm-map [zoom]="zoom" [latitude]="latitude" [longitude]="longitude">
+                            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                                (dragEnd)="drag($event)">
+                            </agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="./../../../assets/images/tramites/arrow2.png" class="izquierda"
+                        style="height: 20px;">
+                        <owl-carousel-o [options]="customOptions"
+                            class="testimonial-one px-4 owl-right-nav owl-carousel owl-loaded owl-drag">
+                            <ng-template carouselSlide>
+                                <div class="card overflow-hidden">
+                                    <div class="card-body p-0" style="text-align: center;">
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h3 class="table_row">Mazda CX-5</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="./../../../assets/images/misautos/mazda.jpg" class="icono2"
+                                                    style="height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h4 class="table_row">Usuario: Alejandro</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo
+                                                            mantenimiento</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">15 Nobiembre, 2021</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Tramite por vencer</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Tenecia
+                                                            13/enero/2022</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo uso</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">2 Enero, 2022</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Última localización</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Del Carmen, Coyoacán</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <button
+                                                    class="btn btn-danger btn-rounded mr-2 mb-2 text-white botoFinal">
+                                                    Gestionar vehículo
+                                                </button>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <button type="button"
+                                                    class="btn btn-rounded btn-outline-primary botoFinal">
+                                                    Agendar Cita
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+
+                            <ng-template carouselSlide>
+                                <div class="card overflow-hidden">
+                                    <div class="card-body p-0" style="text-align: center;">
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h3 class="table_row">Toyota Rav4</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="./../../../assets/images/misautos/toyota.png" class="icono2"
+                                                    style="height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h4 class="table_row">Usuario: Pablo</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo
+                                                            mantenimiento</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">15 Nobiembre, 2021</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Tramite por vencer</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Tenecia
+                                                            13/enero/2022</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo uso</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">2 Enero, 2022</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Última localización</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Del Carmen, Coyoacán</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <button
+                                                    class="btn btn-danger btn-rounded mr-2 mb-2 text-white botoFinal">
+                                                    Gestionar vehículo
+                                                </button>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <button type="button"
+                                                    class="btn btn-rounded btn-outline-primary botoFinal">
+                                                    Agendar Cita
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+
+                            <ng-template carouselSlide>
+                                <div class="card overflow-hidden">
+                                    <div class="card-body p-0" style="text-align: center;">
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h3 class="table_row">Toyota Sienna</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="./../../../assets/images/misautos/toyota_siena.png"
+                                                    class="icono2" style="height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-12">
+                                                <h4 class="table_row">Usuario: Mamá</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo
+                                                            mantenimiento</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">15 Nobiembre, 2021</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Tramite por vencer</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Tenecia
+                                                            13/enero/2022</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Ultimo uso</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">2 Enero, 2022</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_titulo">Última localización</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="card_valor">Del Carmen, Coyoacán</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6  border-right">
+                                                <button
+                                                    class="btn btn-danger btn-rounded mr-2 mb-2 text-white botoFinal">
+                                                    Gestionar vehículo
+                                                </button>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <button type="button"
+                                                    class="btn btn-rounded btn-outline-primary botoFinal">
+                                                    Agendar Cita
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                        <img src="./../../../assets/images/tramites/arrow.png" class="derecha"
+                        style="height: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

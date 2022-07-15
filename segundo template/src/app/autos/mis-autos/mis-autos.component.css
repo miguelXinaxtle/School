@@ -1,0 +1,67 @@
+.alignBoton {
+    padding-top: 20px;
+    text-align: right;
+}
+
+.azul {
+    padding: 20px;
+    color: darkblue;
+}
+
+.card_titulo {
+    color: darkblue;
+    font-size: 8px;
+
+}
+
+.card_valor {
+    color: darkblue;
+    font-size: 12px;
+
+}
+
+.botoFinal {
+    font-size: 10px;
+}
+
+.card-back {
+    background-color: #fafafa;
+}
+
+agm-map {
+    height: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+#search {
+    width: 40%;
+    position: absolute;
+    z-index: 9999;
+    top: 40px;
+    margin-left: 15px;
+}
+
+
+.icono2{
+    width: auto !important;
+    display: initial !important;
+}
+
+.izquierda{
+    position: absolute;
+    z-index: 999999;
+    bottom: 50%;
+    left: 2%;
+}
+
+.derecha{
+    position: absolute;
+    z-index: 999999;
+    bottom: 50%;
+    right: 2%
+}

@@ -1,0 +1,64 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class='col-sm-12 col-md-6 col-xl-6 '>
+            </div>
+            <div class='col-sm-12 col-md-3 col-xl-3'>
+                <select class="form-control">
+                    <option>Selecciona un verificentro</option>
+                    <option>Verifcentro 1</option>
+                </select>
+            </div>
+            <div class='col-sm-12 col-md-3 col-xl-3'>
+                <button class="btn btn-rounded float-right" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-warning">more_horiz</mat-icon> 
+                </button>
+                <button class="btn btn-rounded float-right mr-2" style="background-color: #FFFF;">
+                    <mat-icon style="font-size: 18px;vertical-align: middle;" class="text-warning">create</mat-icon> 
+                    Editar
+                </button>
+            </div>
+        </div>
+        <div class="card overflow-hidden">
+            <div class="card-header align-items-start border-0 pb-0 mb-2">
+                <div class="col-12">
+                    <!-- <span>Completa la información</span> -->
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <form class="row card-torax mr-3 ml-3" [formGroup]="form">
+                    <div class='col-sm-12 col-md-6 col-xl-6 mt-2 border-right text-center mt-4'>
+                        <ngb-datepicker #dp formControlName="fecha"></ngb-datepicker>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6 mt-2'>
+                        <div class="row">
+                            <div class='col-sm-12 col-md-12 col-xl-12 mt-2 mb-4'>
+                                <mat-label>Selecciona horario</mat-label>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6 mt-2'>
+                                <mat-label>De</mat-label>
+                                <ngb-timepicker formControlName="de"></ngb-timepicker>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6 mt-2'>
+                                <mat-label>A</mat-label>
+                                <ngb-timepicker formControlName="a"></ngb-timepicker>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12 mt-2'>
+                                <p style="margin-top: 35px;">
+                                    <span>¿Necesitas que llevemos tu auto por ti?</span>
+                                    <mat-icon>check_box</mat-icon>
+                                </p>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12 mt-4 mb-4 text-center'>
+                                <button class="btn btn-danger btn-rounded mr-3 mb-3 text-white">
+                                    Confirmar cita y proceder al pago
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

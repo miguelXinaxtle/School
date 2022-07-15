@@ -1,0 +1,146 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Citas</h4>
+                    <p class="mb-0">Cita de mantenimiento</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Cita</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+            <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+<!--            <a href="javascript:void(0);" class="btn btn-primary btn-rounded mb-3 mr-3"><i class="las la-download scale5 mr-2"></i>Descargar Reporte</a>-->
+            <a [routerLink]="['/admin/mantenimiento-seguimiento']" class="btn btn-outline-primary btn-rounded mb-3 mr-3"><i class="las la-calendar-day scale5 mr-2"></i>Solicitar Cita Urgente</a>
+        </div>
+        <div class="card overflow-hidden">
+            <div class="card-header align-items-start border-0 pb-0 mb-2">
+                <div class="col-12">
+                    <span>Completa la información</span>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <form class="row card-torax mr-3 ml-3" [formGroup]="form">
+                    <div class='col-sm-12 col-md-6 col-xl-6 mt-2'>
+                        <mat-form-field>
+                            <mat-label>Palca o VIN</mat-label>
+                            <input matInput formControlName="placaVIN" placeholder="Palca o VIN"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.placaVIN.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6 mt-2'>
+                        <mat-form-field>
+                            <mat-label>Num. Teléfono</mat-label>
+                            <input matInput formControlName="telefono" placeholder="Num. Teléfono"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.telefono.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Estado</mat-label>
+                            <input matInput formControlName="estado" placeholder="Estado"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.estado.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Ciudad</mat-label>
+                            <input matInput formControlName="ciudad" placeholder="Ciudad"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.ciudad.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Alcaldía</mat-label>
+                            <input matInput formControlName="alcaldia" placeholder="Alcaldía"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.alcaldia.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Código Postal (Donde quiere hacer el servicio)</mat-label>
+                            <input matInput formControlName="codigoPostal" placeholder="Código Postal (Donde quiere hacer el servicio)"
+                                oninput="this.value = this.value.toUpperCase()">
+                            <mat-error *ngIf="form.controls.codigoPostal.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>¿Qué servicio requiere?</mat-label>
+                            <mat-select placeholder='¿Qué servicio requiere?'
+                                formControlName="servicio">
+                                <mat-option *ngFor="let serv of servicios" [value]="serv.id">
+                                    {{serv.nombre}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.servicio.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Seleccionar taller</mat-label>
+                            <mat-select placeholder='Seleccionar taller'
+                                formControlName="taller">
+                                <mat-option *ngFor="let taller of talleres" [value]="taller.id">
+                                    {{taller.nombre}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.taller.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <mat-form-field>
+                            <mat-label>Descripción más detallada</mat-label>
+                            <textarea [rows]="14" matInput formControlName="descripcion" placeholder="Descripción más detallada"
+                                oninput="this.value = this.value.toUpperCase()"></textarea>
+                            <mat-error *ngIf="form.controls.descripcion.invalid">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class='col-sm-12 col-md-3 col-xl-3 text-center mt-4'>
+                        <ngb-datepicker #dp formControlName="fecha"></ngb-datepicker>
+                    </div>
+                    <div class='col-sm-12 col-md-3 col-xl-3'>
+                        <mat-label>Horario disponible</mat-label><br>
+                        <mat-label>De</mat-label>
+                        <ngb-timepicker formControlName="de"></ngb-timepicker>
+                        <mat-label>A</mat-label>
+                        <ngb-timepicker formControlName="a"></ngb-timepicker>
+                    </div>
+                    <div class='col-sm-12 col-md-6 col-xl-6'>
+                        <p style="margin-top: 35px;">
+                            <span>¿Necesitas que llevemos tu auto por ti?</span>
+                            <mat-icon>check_box</mat-icon>
+                        </p>
+                    </div>
+                </form>
+                <div class="row mt-4">
+                    <div class="col-6">
+                       <!-- <button class="btn btn-danger btn-rounded mr-3 mb-3 text-danger float-right" style="background-color: #EEEEEE;">
+                            <mat-icon style="font-size: 18px;vertical-align: middle;">phone</mat-icon>
+                            Solicitar una cita urgente
+                        </button> -->
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-danger btn-rounded mr-3 mb-3 text-white" [routerLink]="['/admin/recoger-unidad']">
+                            <mat-icon style="font-size: 18px;vertical-align: middle;"> save_alt</mat-icon> 
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

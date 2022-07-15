@@ -1,0 +1,242 @@
+.data {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+.boton-secundario {
+    border-radius: 50px;
+    background-color: #fff;
+    color: blue;
+    margin-left: 15px; 
+    height: 100%;
+    text-align: center; 
+    display: table;
+    
+}
+
+.boton-tercero {
+    border-radius: 50px;
+    background-color: #fff;
+    color: #EE3C55;
+    margin-left: 15px; 
+    height: 100%;
+}
+
+.derecha {
+    float: right; 
+}
+
+.azul {
+    color: #1C386B;
+}
+
+.azul_claro {
+    color: #495F88;
+}
+
+.border-end {
+    border-right: 1px solid rgb(239, 240, 246) !important;
+}
+
+.tamanoCard {
+    height: 350px;
+}
+
+.buscar {
+    width: 30%;
+    float: right;
+    border-radius: 30px;
+}
+
+.caja {
+    border-radius: 30px;
+    background-color: #3765e0;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    display: table;
+    box-sizing: border-box;
+}
+
+.textCaja {
+    font-size: 16px;
+    display: table-cell;
+    vertical-align: middle;
+    color: #e7e7e7;
+}
+
+.separador {
+    margin: 0px;
+    border: none;
+    height: 2px;
+    color: #EE3C55;
+    background-color: #EE3C55;
+}
+
+
+
+.color_breadcrumb {
+    background-color: #EE3C55 !important;
+    border: 1px solid #EE3C55 !important;
+    color: #fff;
+}
+.color_breadcrumb:before {
+    border-right-color: #EE3C55 !important;
+    border-left-color: #EE3C55 !important;
+}
+
+.color_breadcrumb_faltante {
+    background-color: #d1deff !important;
+    border: 1px solid #d1deff !important;
+    color: #fff;
+}
+.color_breadcrumb_faltante:before {
+    border-right-color: #d1deff !important;
+    border-left-color: #d1deff !important;
+}
+
+
+.color_breadcrumb_seleccionado {
+    background-color: #3765e0 !important;
+    border: 1px solid #3765e0 !important;
+    color: #fff;
+}
+.color_breadcrumb_seleccionado:before {
+    border-right-color: #3765e0 !important;
+    border-left-color: #3765e0 !important;
+}
+
+
+@media only screen and (max-width: 786px) {
+    .tamanoCard {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .tamanoCard {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-breadcrumb {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px) !important;
+    }
+}
+
+.widthSrcAlerta {
+    width: 8px;
+}
+
+.widthSrcCheckAzul {
+    width: 15px;
+    cursor: pointer;
+}
+
+.icono_min {
+    width: 20px; 
+    cursor: pointer; 
+    float: right;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    font-weight: 400;
+    list-style: none;
+    border-radius: 3px;
+    background: transparent;
+}
+
+
+ .breadcrumb-arrow li {
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb-arrow {
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    list-style: none;
+}
+.breadcrumb-arrow li {
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb-arrow li:first-child a {
+    border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    padding-left: 10px;
+    padding: 0 10px;
+}
+.breadcrumb-arrow li a, .breadcrumb-arrow li span {
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb-arrow li:not(:first-child) {
+    margin-left: -5px;
+}
+.breadcrumb-arrow li + li:before {
+    padding: 0;
+    content: "";
+}
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+    height: 36px;
+    padding: 0 10px 0 25px;
+    line-height: 36px;
+}
+.breadcrumb-arrow li a:after {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    right: -12px;
+    z-index: 2;
+    border-left: 16px solid #6e79ca;
+}
+.breadcrumb-arrow li a:before {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    right: -11px;
+    z-index: 3;
+    border-left-style: solid;
+    border-left-width: 16px;
+}
+ 
+
+
+
+
+.breadcrumb-arrow li a {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+

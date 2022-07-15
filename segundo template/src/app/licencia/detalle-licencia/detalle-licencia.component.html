@@ -1,0 +1,59 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px;padding-right: 50px;padding-bottom: 10px;padding-top: 10px;">
+            <div class="row">
+                <div class="mr-auto">
+                    <h4 class="mb-0" style="color: #1c386b; padding-top: 3px; font-weight: bold;">Instrucciones
+                    </h4>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="text-align: justify;">
+                <div *ngFor="let data of instrucciones; let index = index;">
+                    <p style="color: #1c386b;font-size: 15px;">
+                        {{(index+1)}}. {{data.parrafo}}
+                        <span *ngIf="data.hipertextos.length > 0">
+                            <p *ngFor="let referencia of data.hipertextos;">
+                                <a style="color: #2d97fc;" (click)="irPagina(referencia.link)">{{referencia.link}}</a>
+                            </p>
+                        </span>
+                        <span *ngIf="data.opciones.length > 0">
+                            <p *ngFor="let opciones of data.opciones;">
+                                <a style="color: #2d97fc;" (click)="irPagina(opciones)">{{opciones}}</a>
+                            </p>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px;padding-right: 50px;padding-bottom: 10px;padding-top: 10px;">
+            <div class="row">
+                <div class="mr-auto">
+                    <h4 class="mb-0" style="color: #1c386b; padding-top: 3px; font-weight: bold;">Documentos
+                    </h4>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="text-align: justify;">
+                <div *ngFor="let data of documentos; let index = index;">
+                    <p style="color: #1c386b;font-size: 15px;">
+                        {{(index+1)}}. {{data.parrafo}}
+                        <span *ngIf="data.hipertextos.length > 0">
+                            <p *ngFor="let referencia of data.hipertextos;">
+                                <a style="color: #2d97fc;" (click)="irPagina(referencia.link)">{{referencia.link}}</a>
+                            </p>
+                        </span>
+                        <mat-action-list *ngIf="(data.opciones.length > 0)">
+                            <div *ngFor="let opciones of data.opciones;" style="color: #1c386b;font-size: 13px;font-weight: bold; padding-left: 30px;">
+                                {{opciones.documento}}
+                            </div>
+                        </mat-action-list>
+                    </p>
+                </div>
+                <p style="color: #1c386b;font-size: 13px;font-weight: bold;">
+                    *Si la Credencial para votar cuenta con el domicilio actual completo, se considerará como comprobante de domicilio
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

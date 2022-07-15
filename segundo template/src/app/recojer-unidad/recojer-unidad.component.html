@@ -1,0 +1,81 @@
+<p>recojer-unidad works!</p>
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Citas</h4>
+                    <p class="mb-0">Formulario para captura de citas</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/index']">App</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/formulario-cita']">Cita</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Recoger</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-wrap mb-3">
+            <div class="input-group search-area-2 mb-3 mr-auto d-inline-flex">
+                <div class="input-group-append">
+                </div>
+            </div>
+        </div>
+        <div class="card overflow-hidden">
+            <div class="card-header align-items-start border-0 pb-0 mb-2">
+                <div class="col-8">
+                    <span>Buscar dirección</span>
+                </div>
+                
+            </div>
+            <div class="card-body p-0">
+                <div class="row card-torax mr-3 ml-3">
+                    <div class="col-8 border-right">
+                        <input type="text" id="search" #search class="form-control input-rounded" placeholder="Domicilio">
+                        <agm-map [zoom]="zoom" [latitude]="latitude" [longitude]="longitude">
+                            <agm-marker [latitude]="latitude" [longitude]="longitude"
+                                 [markerDraggable]="true" (dragEnd)="drag($event)">
+                            </agm-marker>
+                        </agm-map>
+                    </div>
+                    <div class="col-4">
+                        <form class="row card-torax mt-3" [formGroup]="form">
+                            <div class='col-sm-12 col-md-12 col-xl-12'>
+                                <mat-form-field>
+                                    <mat-label>Instrucciones adicionales</mat-label>
+                                    <textarea [rows]="8" matInput formControlName="instrucciones" placeholder=""
+                                        oninput="this.value = this.value.toUpperCase()"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-xl-12'>
+                                <mat-label>Seleccionar horario</mat-label>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-label>De</mat-label>
+                                <ngb-timepicker formControlName="de"></ngb-timepicker>
+                            </div>
+                            <div class='col-sm-12 col-md-6 col-xl-6'>
+                                <mat-label>A</mat-label>
+                                <ngb-timepicker formControlName="a"></ngb-timepicker>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-danger btn-rounded mr-3 mb-3 text-white" [routerLink]="['/admin/index']">
+                    Confirmar y guardar
+                    <mat-icon style="font-size: 18px;vertical-align: middle;"> arrow_forward_ios</mat-icon> 
+                </button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
