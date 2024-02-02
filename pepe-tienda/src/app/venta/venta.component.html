@@ -1,0 +1,65 @@
+    <div>
+
+    <p-calendar [(ngModel)]="dateInicial" [(ngModel)]="fechaInicial" ></p-calendar>
+    <p-calendar [(ngModel)]="dateFinal" [(ngModel)]="fechaFinal" ></p-calendar>
+      <!-- <input [(ngModel)]="dateInicial" [(ngModel)]="fechaInicial" type="date">
+      <input [(ngModel)]="dateFinal" [(ngModel)]="fechaFinal" type="date"> -->
+      <!-- <button (click)="getVenta(); masVendidos()">Mostrar Ventas</button> -->
+      <p-button (onClick)="getVenta()" label="Mostrar Ventas"></p-button>
+    </div>
+<div>
+     <p-table *ngIf="vendidos.length > 0" [value]="vendidos" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+            <h2>Mas vendidos</h2>
+            <tr>
+              <th style="width: 150px;">Cantidad</th>
+              <th>Descripcion</th>
+            </tr>
+          
+      </ng-template>
+      <ng-template pTemplate="body" let-vendidos>
+          <tr>
+            <td>{{vendidos.total}}</td>
+            <td>{{vendidos.descripcion}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  <p-table *ngIf="ventas.length > 0" [value]="ventas" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+            <h2>Historial de ventas</h2>
+          <tr>
+            <th>idVenta</th>
+            <th>Cantidad</th>
+            <th>Descripcion</th>
+            <th>Costo</th>    
+            <th>Precio</th>    
+            <th>Subtotal</th>
+            <th>Usuario</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-venta>
+          <tr>
+            <td>{{venta.idVenta}}</td>
+            <td>{{venta.cantidad}}</td>
+            <td>{{venta.descripcion}}</td>
+            <td>{{venta.costo | currency }}</td>
+            <td>{{venta.precio | currency}}</td>
+            <td>{{venta.subtotal | currency}}</td>
+            <td>{{venta.nombre}}</td>
+            <td>{{venta.nombreCliente}}</td>
+            <td>{{venta.fecha | date}}</td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="footer" let-product>
+            <tr>
+               <th style="text-align: start;" [colSpan]="3">Totales:</th>
+               <th>{{valorCosto| currency }}</th>
+               <th>{{valorPrecio| currency }}</th>
+               <th>{{valorSubtotal | currency}}</th>
+               <th [colSpan]="3"></th>
+            </tr>
+        </ng-template>    
+  </p-table>        
+</div>

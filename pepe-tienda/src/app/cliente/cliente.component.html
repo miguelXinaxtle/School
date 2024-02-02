@@ -1,0 +1,71 @@
+<p-toast></p-toast>
+
+<p-dialog header="Cliente" [(visible)]="visible" [style]="{ width: '50vw' }">
+    <div *ngIf="clienteSelected"  class="flex py-2 justify-content-center">
+        <label style="padding-left: 10px;" for="">Nombre</label>
+        <input type="text" pInputText="nombre" [(ngModel)]="clienteSelected.nombre"/>
+        
+        <label for="">Nacimiento</label>
+        <p-calendar [(ngModel)]="clienteSelected.nacimiento"></p-calendar>
+        
+        <label for="">Correo</label>
+        <input type="email" pInputText="correo" [(ngModel)]="clienteSelected.correo"/>
+        
+        <label  for="">Telefono</label>
+        <input type="tel" pInputText="telefono" [(ngModel)]="clienteSelected.telefono"/>
+    </div>
+    <div class="center">
+        <p-button (onClick)="alterCliente()" label="Actualizar" severity="success"></p-button>
+    </div>
+</p-dialog>
+
+
+
+<p-table *ngIf="compras.length>0" [value]="compras" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>id Cliente</th>
+            <th>Cliente</th>
+            <th>Nacimiento</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Total Compras</th>
+            <th>Editar Datos</th>
+            <th>Eliminar Cliente</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-buy>
+        <tr>
+            <td>{{buy.idCliente}}</td>
+            <td>{{buy.nombre}}</td>
+            <td>{{buy.nacimiento | date}}</td>
+            <td>{{buy.correo}}</td>
+            <td>{{buy.telefono }}</td>
+            <td>{{buy.totalCompra |currency }}</td>
+            <td><p-button (onClick)="modal(buy)" label="Editar" severity="warning"></p-button></td>
+            <td><p-button (onClick)="eliminarCliente(buy.idCliente)" label="Eliminar" severity="danger"></p-button></td>
+        </tr>
+    </ng-template>
+</p-table>
+
+
+<p-card header="Crear Cliente">
+    <p class="m-0">
+
+<label for="">Nombre</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="nombreCliente"/>
+
+<label for="">Nacimiento</label>
+<p-calendar [(ngModel)]="nacimientoCliente"></p-calendar>
+
+<label for="">Correo</label>
+<input type="email" pInputText="Nombre" [(ngModel)]="correo"/>
+
+<label for="">Telefono</label>
+<input type="tel" pInputText="Nombre" [(ngModel)]="telefono"/>
+
+<div>
+    <p-button (onClick)="crearCliente()" label="Registrar Cliente" severity="success"></p-button>
+</div>  <!-- <button (click)="registrarUsuario()">Registrar Usuario</button> -->
+
+</p-card>

@@ -1,0 +1,32 @@
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.div{
+    width: 400px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0px 10px red;
+}
+
+input,p-inputNumber,p-dropdown{
+    margin: 10px;
+}
+.boton{
+    margin: 30px;
+    box-shadow: 0 0px 20px 0 rgba(248, 3, 3, 0.984), 0 0px 10px rgb(252, 34, 1);
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(246, 81, 81);
+    padding: 10px;
+}
+p-button{
+    margin: 20px;
+}

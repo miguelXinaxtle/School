@@ -1,0 +1,39 @@
+div{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;     
+    padding: 40px;
+}
+
+.Columnas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: centers;
+    padding: 30px;
+    margin: 20px;
+    border: solid 3px rgb(29, 192, 29);
+    box-shadow: 0 0px 10px 0 rgba(17, 228, 56, 0.984), 0 0px 10px 0 rgb(29, 237, 43);
+}
+label{
+    margin: 20px;
+    font-size: 20px;
+}
+button{
+    font-size: 20px;
+    padding: 5px;
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgb(79, 243, 120);
+    border: solid;
+    box-shadow: 0 0px 5px rgb(86, 253, 125) ;
+}
+th,td{
+    margin: 60px;
+    box-shadow: 0 0px 10px 0 rgba(116, 118, 113, 0.791), 0 0px 0px 0 rgb(107, 111, 107);
+}
+p-card{
+    margin: 50px;
+    box-shadow: 0 0px 30px 0 rgba(116, 118, 113, 0.791), 0 0px 4px 0 rgb(43, 224, 40);
+}

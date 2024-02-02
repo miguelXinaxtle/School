@@ -1,0 +1,56 @@
+<p-toast></p-toast>
+<p>Usuarios</p>
+          
+<p-dialog header="Usuario" [(visible)]="visible" [style]="{ width: '40vw'}">
+    <div *ngIf="usuarioSelected" class="flex py-2 justify-content-center">
+        <div class="divEspace" >
+             <label style="padding-left: 10px;" for="">Nombre</label>
+             <input type="text" pInputText="Nombre" [(ngModel)]="usuarioSelected.Nombre"/>
+        </div>
+        <div class="divEspace">
+            <label for="">Nacimiento</label>
+            <p-calendar [(ngModel)]="usuarioSelected.nacimiento"></p-calendar> 
+        </div>
+        <div class="divEspace">
+            <label for="">Correo</label>
+            <input type="email" pInputText="Nombre" [(ngModel)]="usuarioSelected.correo"/>
+        </div>
+        <div class="divEspace">
+            <label  for="">Telefono</label>
+            <input type="tel" pInputText="Nombre" [(ngModel)]="usuarioSelected.telefono"/>
+        </div>
+        <div class="divEspace">
+            <label style="margin: 0px;" for="">Foto</label>
+            <input type="text" pInputText="Nombre" [(ngModel)]="usuarioSelected.foto"/>
+        </div>
+        <div class="divEspace" *ngIf="puesto" >    
+            <p-dropdown  [options]="puestoList" [(ngModel)]="puesto"   optionLabel="nombre"  placeholder="selecciona puesto" ></p-dropdown>
+        </div>
+        <div class="divEspace" >
+            <p-button (onClick)="upadateUsuario()" label="Editar Usuario" severity="success"></p-button>
+        </div> 
+    </div>
+</p-dialog>
+
+
+
+<div class="contenedor">
+    <div class="fondo"  *ngFor="let item of userList">
+       <img class="img" src="{{item.foto}}" alt="">
+       <h3>idUsuario:{{item.idUsuario}}</h3> 
+        <h3>Nombre: {{item.Nombre}}</h3>
+        <p-button (onClick)="modal(item)" label="Editar Usuario" severity="info"></p-button>
+        <p-button (onClick)="eliminarUsuario(item.idUsuario)" label="Eliminar Usuario" severity="danger"></p-button>
+        <!-- <p-button (onClick)="editarUsuario(item.idUsuario)" label="Editar Usuario" severity="info"></p-button> -->
+    </div> 
+</div>
+<!--<div class="card flex justify-content-center">
+    <p-button label="Submit"></p-button>
+    <p-button label="Primary"></p-button>
+    <p-button label="Secondary" severity="secondary"></p-button>
+    <p-button label="Success" severity="success"></p-button>
+    <p-button label="Info" severity="info"></p-button>
+    <p-button label="Warning" severity="warning"></p-button>
+    <p-button label="Help" severity="help"></p-button>
+    <p-button label="Danger" severity="danger"></p-button>
+</div> -->

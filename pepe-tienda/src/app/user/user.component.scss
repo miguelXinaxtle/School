@@ -1,0 +1,47 @@
+p{font-size: 40px;text-align: center;color: red;}
+
+.contenedor{
+    padding: 10px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center 
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px ;
+    box-shadow: 0 4px 8px 0 rgba(51, 4, 239, 0.2), 0 6px 20px 0 rgba(7, 66, 218, 0.19);
+}
+
+.fondo{
+    background-color: rgb(220, 237, 248);
+    padding: 20px 40px;
+    border: solid 3px; 
+    border-radius: 20px; 
+    width: 25%;
+    box-shadow: 0 4px 12px rgb(0, 38, 255), 0 10px 20px  rgb(0, 255, 229);
+    margin: 30px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+     align-items: center;
+}
+p-button{
+    margin: 5px;
+}
+.editar{
+    border-radius: 20px;
+    background-color: rgba(255, 179, 0, 0.801);
+    padding: 10px;
+    margin: 10px;
+}
+
+.divEspace{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}

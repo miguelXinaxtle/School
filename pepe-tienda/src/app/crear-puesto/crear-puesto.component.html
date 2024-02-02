@@ -1,0 +1,17 @@
+
+<div class="flex" style="width: 100%;">
+    <p-card header="Crear Puesto" [style]="{ width: '30rem' }">
+        <div class="flex flex-column grap-2">
+            <label for="">Nombre</label>
+            <input type="text" pInputText="Nombre" [(ngModel)]="nombre"/>
+        </div>
+        <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+            <label for="">Nombre</label>
+            <input type="text" pInputText="Nombre" [(ngModel)]="nombre"/>
+        </div>
+    <div>
+        <p-toast></p-toast>
+          <button type="button" pButton pRipple (click)="registrarPuesto()" label="Registrar producto" class="p-button-success"></button>
+    </div>
+    </p-card>
+</div>

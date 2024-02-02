@@ -1,0 +1,74 @@
+<p-toast></p-toast>
+    <p-dialog header="Cantidad" [(visible)]="visible" [style]="{ width: '50vw' }">
+        <div class="flex py-2 justify-content-center">
+          <p-inputNumber inputId="integeronly" [(ngModel)]="cantidad" ></p-inputNumber>
+        </div>
+        
+        <p-button (click)="cambiarExistencia()" icon="pi pi-external-link" label="Agregar"></p-button>
+    </p-dialog>
+
+   <p-dialog header="Producto" [(visible)]="visto" [style]="{ width: '50vw' }">
+    <div *ngIf="productSelected" class="flex py-2 justify-content-center">
+
+      <div>
+        <label  style="padding-left: 10px;" for="">Descripcion</label>
+        <input type="text" pInputText="Nombre" [(ngModel)]="productSelected.descripcion"/>
+      </div>
+      <div>
+        <label  for="">Costo</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="productSelected.costo" ></p-inputNumber>
+      </div>
+      <div>
+        <label class="lab" for="">Precio</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="productSelected.precio" ></p-inputNumber>
+      </div>
+      <div>
+        <label  for="">Minimo Existencia</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="productSelected.minimoexistencia" ></p-inputNumber>
+      </div>
+      <div>
+        <p-dropdown  [options]="departamentoList" [(ngModel)]="idDepartamentoSelected"   optionLabel="nombre"  placeholder="{{productSelected.nombreDepartamento}}" ></p-dropdown>
+      </div>
+      <div>
+        <p-dropdown  [options]="provedorList" [(ngModel)]="idProvedorSelected"   optionLabel="nombre"  placeholder="{{productSelected.nombre}}"></p-dropdown>
+      </div>
+      <div>
+        <p-button (click)="actualizarProduct()" icon="pi pi-external-link" label="Actualizar"></p-button>
+      </div>
+    </div>
+  </p-dialog>
+
+<p-table [value]="productos" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+   <tr>
+     <th>idProducto</th>
+     <th>descripcion</th>
+     <th>costo</th>    
+     <th>precio</th>    
+     <th>Departamento</th>
+     <th>Provedor</th>
+     <th>TelefonoProvedor</th>
+     <th>CorreoProvedor</th>
+     <th>Existencia</th>
+     <th>Actualizar Existencias</th>
+     <th>Editar Producto</th>
+     <th>Eliminar Producto</th>
+   </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-producto>
+   <tr>
+       <td>{{producto.idProducto}}</td>
+       <td>{{producto.descripcion}}</td>
+       <td>{{producto.costo}}</td>
+       <td>{{producto.precio}}</td>
+       <td>{{producto.nombreDepartamento}}</td>
+       <td>{{producto.nombre}}</td>
+       <td>{{producto.telefono}}</td>
+       <td>{{producto.correo}}</td>
+       <td>{{producto.existencia}}</td>
+       <td><p-button label="Actualizar" (onClick)="showModal(producto)" severity="warning"></p-button></td>
+       <td><p-button label="Editar" (onClick)="modal(producto)"  severity="success"></p-button></td>
+       <td><p-button label="Eliminar" (onClick)="eliminarProducto(producto.idProducto)" severity="danger"></p-button></td>        
+    </tr>
+  </ng-template>
+</p-table>

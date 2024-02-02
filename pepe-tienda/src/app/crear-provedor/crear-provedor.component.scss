@@ -1,0 +1,11 @@
+div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p-button,p-calendar,input,p-dropdown{
+    margin: 25px;
+    padding: 10px;
+}

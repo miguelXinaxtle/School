@@ -1,0 +1,43 @@
+<div>
+    <p-card header="Crear Producto">
+        <p class="m-0">
+
+    <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+        <label for="">Descripcion</label>
+        <input type="text" pInputText [(ngModel)]="descripcion" />
+    </div>
+    <!-- <label for="">Descripcion</label>
+    <input type="text" pInputText [(ngModel)]="descripcion" /> -->
+    <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+        <label for="">Costo</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="costo"> </p-inputNumber>
+    </div>
+    <!-- <label for="">Costo</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="costo"> </p-inputNumber> -->
+    <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+        <label for="">Precio</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="precio"> </p-inputNumber>
+    </div>
+    <!-- <label for="">Precio</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="precio"> </p-inputNumber> -->
+    <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+        <label for="">Minimo existencia</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="minimoexistencia"> </p-inputNumber>
+    </div>
+    <!-- <label for="">Minimo existencia</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="minimoexistencia"> </p-inputNumber> -->
+    <div class="flex flex-column grap-2" style="margin-top: 1rem;">
+        <p-dropdown [options]="provedorList" [(ngModel)]="idProvedorSelected"   optionLabel="nombre"  placeholder="Provedor"></p-dropdown>
+        <p-dropdown [options]="departamentoList" [(ngModel)]="idDepartamentoSelected"   optionLabel="nombre"  placeholder="Departamento"></p-dropdown>
+    </div>
+    <!-- <p-dropdown [options]="provedorList" [(ngModel)]="idProvedorSelected"   optionLabel="nombre"  placeholder="Provedor"></p-dropdown> -->
+    <!-- <p-dropdown [options]="departamentoList" [(ngModel)]="idDepartamentoSelected"   optionLabel="nombre"  placeholder="Departamento"></p-dropdown> -->
+
+    <div>
+        <p-toast></p-toast>
+          <button type="button" pButton pRipple (click)="registerProduct()" label="Registrar producto" class="p-button-success"></button>
+    </div>
+    
+</p-card>
+</div>
+

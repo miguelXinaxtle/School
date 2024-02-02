@@ -1,0 +1,11 @@
+<div>
+    <p-card header="Crear Departamento">
+        <p class="m-0">
+    <label for="">Nombre</label>
+    <input type="text" pInputText="Nombre" [(ngModel)]="nombre"/>
+    <div>
+        <p-toast></p-toast>
+          <button type="button" pButton pRipple (click)="registrarDepartamento()" label="Registrar producto" class="p-button-success"></button>
+    </div>
+    </p-card>
+</div>

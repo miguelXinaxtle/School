@@ -1,0 +1,35 @@
+<div>
+    <h1>Departamentos</h1>
+    <p-dropdown [options]="departamentoList" [(ngModel)]="idDepartamentoSelected"   optionLabel="nombre"  placeholder="Departamento"></p-dropdown>
+    <!-- <button (click)="productoPorDepartamento()">Mostrar Articulos</button> -->
+    <p-button (onClick)="productoPorDepartamento()" label="Mostrar Articulos"></p-button>
+   
+    <p-table *ngIf="listProduct.length > 0" [value]="listProduct" [tableStyle]="{ 'min-width': '100rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+              <th>id Producto</th>
+              <th>Descripcion</th>
+              <th>Costo</th>    
+              <th>Precio</th>    
+              <th>Departamento</th>
+              <th>Provedor</th>
+              <th>TelefonoProvedor</th>
+              <th>CorreoProvedor</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td>{{item.idProducto}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.costo}}</td>
+                <td>{{item.precio}}</td>
+                <td>{{item.Departamento}}</td>
+                <td>{{item.Provedor}}</td>
+                <td>{{item.TelefonoProvedor}}</td>
+                <td>{{item.CorreoProvedor}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+          <!-- </tbody>
+          </table> -->
+</div>

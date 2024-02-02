@@ -1,0 +1,46 @@
+
+<p-table [value]="caja" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>id Caja</th>
+            <th>Monto Actual</th>
+            <th>id Usuario</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-caja>
+        <tr>
+            <td>{{ caja.idCaja }}</td>
+            <td>{{ caja.montoActual }}</td>
+            <td>{{ caja.idUsuario }}</td>
+            <td>{{ caja.nombre }}</td>
+            <td>{{ caja.inicio }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<div>
+    <p-card header="Iniciar turno">
+        <p class="m-0">
+    <label for="">Monto Inicial</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="montoInicial"> </p-inputNumber>
+    <div>
+        <p-toast></p-toast>
+        <!-- <button type="button" pButton pRipple (click)="registerCaja(true)" label="Abrir Caja" class="p-button-success"></button> -->
+        <p-button  (onClick)="registerCaja(true)" label="Abrir Caja" severity="success"></p-button>
+    </div> 
+    </p-card>
+
+    <p-card header="Finalizar turno">
+        <p class="m-0">
+    <label for="">Monto Final</label>
+    <p-inputNumber inputId="integeronly" [(ngModel)]="montoFinal"> </p-inputNumber>
+    <div>
+        <p-toast></p-toast>
+          <!-- <button type="button" pButton pRipple (click)="registerCaja(false)" label="Cerrar Caja " class="p-button-warn"></button> -->
+        <p-button (onClick)="registerCaja(false)" label="Cerrar Caja" severity="danger"></p-button>
+    </div> 
+    </p-card>
+</div>
+

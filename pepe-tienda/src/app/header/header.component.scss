@@ -1,0 +1,33 @@
+.style-first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.espace{
+    display: flex;
+    margin: 5px;
+}
+.imagen-estilo{
+    width: 60px; height: 70px;
+    margin-right: 7px
+}
+.div-style{
+    display: flex;margin-right: 20px;
+    
+}
+.imagen-style{
+    height: 50px; width: 50px; border-radius: 25px;
+    box-shadow: 0 -2px 4px 0 rgb(10, 5, 5), 0 3px 5px 0 rgb(10, 6, 6);
+    margin: 6px;
+
+}
+
+
+.cabezero{
+    box-shadow: 0 2px 4px 0 rgb(0, 132, 255), 0 3px 20px 0 rgb(0, 132, 255);
+    margin: 10px;
+}
+button{
+    padding: 10px;
+    margin: 2px;
+}

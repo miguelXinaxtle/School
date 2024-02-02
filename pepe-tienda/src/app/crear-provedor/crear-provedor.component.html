@@ -1,0 +1,40 @@
+
+<p-card header="Crear Proveedor">
+    <p class="m-0">
+<label for="">Nombre</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="nombre"/>
+
+<label for="">Correo</label>
+<input type="email" pInputText="Nombre" [(ngModel)]="correo"/>
+
+<label for="">Telefono</label>
+<input type="tel" pInputText="Nombre" [(ngModel)]="telefono"/>
+
+<label  for="">Empresa</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="empresa"/>
+
+<div>
+    <p-toast></p-toast>
+      <button type="button" pButton pRipple (click)="registrarProvedor()" label="Registrar producto" class="p-button-success"></button>
+</div>
+
+</p-card>
+
+<p-table [value]="provedorlist" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
+<!-- <p-table  [value]="provedorlist" [tableStyle]="{ 'min-width': '50rem' }"> -->
+    <ng-template pTemplate="header">
+        <tr>
+            <th>id Cliente</th>
+            <th>Cliente</th>
+            <th>Empresa</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-buy>
+        <tr>
+            <td>{{buy.idProvedor}}</td>
+            <td>{{buy.nombre}}</td>
+            <td>{{buy.empresa}}</td>
+            <!--<td><p-button (onClick)="modal(buy)" label="Editar" severity="warning"></p-button></td> -->
+        </tr>
+    </ng-template>
+</p-table>

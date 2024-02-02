@@ -1,0 +1,55 @@
+<!-- 
+<div style="display: flex; flex-direction: column; width: 100%; align-items: center;" *ngIf="cambio">
+    <h1>Actualizar Producto</h1>
+
+    <label for="">Descripcion</label>
+    <input [(ngModel)]="cambio.descripcion" type="text">
+
+    <label for="">Costo</label>
+    <input [(ngModel)]="cambio.costo" type="number">
+
+    <label for="">Precio</label>
+    <input [(ngModel)]="cambio.precio" type="number">
+
+    <label for="">Minimo Existencia</label>
+    <input [(ngModel)]="cambio.minimoexistencia" type="number">
+
+    <label for="">Departamento</label>
+    <select [(ngModel)]="idDepartamentoSelected">
+        <option [ngValue]="producto.idDepartamento" *ngFor="let producto of departamentoList">{{producto.nombre}}</option>
+    </select>
+
+    <label for="">Provedor</label>
+    <select [(ngModel)]="idProvedorSelected">
+        <option [ngValue]="producto.idProvedor" *ngFor="let producto of provedorList">{{producto.nombre}}</option>
+    </select>
+    <button (click)="actualizarProduct(cambio.idProducto)">Actualizar</button> 
+</div> -->
+
+
+<p-card header="Editar Producto" *ngIf="cambio">
+    <p class="m-0">
+
+<label style="padding-left: 10px;" for="">Descripcion</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="cambio.descripcion"/>
+
+<label for="">Costo</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="cambio.costo"/>
+
+<label for="">Precio</label>
+<input type="email" pInputText="Nombre" [(ngModel)]="cambio.precio"/>
+
+<label  for="">Minimo Existencia</label>
+<input type="tel" pInputText="Nombre" [(ngModel)]="cambio.minimoexistencia"/>
+<div>
+    <p-dropdown [options]="departamentoList" [(ngModel)]="idDepartamentoSelected"   optionLabel="nombre"  placeholder="Departamento"></p-dropdown>
+    <p-dropdown [options]="provedorList" [(ngModel)]="idProvedorSelected"   optionLabel="nombre"  placeholder="Provedor"></p-dropdown>
+</div>
+<div>
+    <p-button (onClick)="actualizarProduct(cambio.idProducto)" label="Actualizar" severity="success"></p-button>
+</div> 
+
+</p-card>
+
+
+    

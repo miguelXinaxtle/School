@@ -1,0 +1,23 @@
+div{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.div{
+    width: 400px;
+    margin: 20px;display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px gray;
+    border-radius: 30px;
+    box-shadow: 0 0px 10px 0 rgba(141, 142, 148, 0.984), 0 0px 10px rgb(129, 137, 139);
+
+}
+p-button,p-calendar,input{
+    margin: 20px;
+    padding: 10px;
+}

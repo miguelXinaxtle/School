@@ -1,0 +1,90 @@
+input{
+    border: solid rgb(0, 132, 255) 2px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px 0 rgba(0, 132, 255, 0.973), 0 4px 10px 0 rgb(0, 132, 255);
+    margin: 5px;
+}
+p{
+    font-size: x-large;text-align: center;color: red;
+}
+
+.text-normal{
+    font-size: large;color: black;
+}
+
+.boton{
+    border: solid 2px red;
+    border-radius: 40px; 
+    padding: 10px; 
+    font-size: 15px;
+    background-color: red;
+}
+.borrar{
+    
+    border:none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #ff0000;
+    margin: 10px;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+}
+.table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 350px;
+
+}
+// td,th{
+//     border: solid rgb(0, 132, 255);
+//     font-size: 90%;
+// }
+table{
+    border:solid;
+    box-shadow: 0 0px 5px 0 rgba(0, 132, 255, 0.973), 0 0px 5px 0 rgb(0, 132, 255);
+}
+label{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px;
+}
+h5{
+    font-size: 20px;
+    font-weight: 400;
+}   
+.navegar{
+    border-radius: 20px;
+    background-color: rgba(255, 0, 0, 0.861);
+    border: none;
+    margin: 40px;
+    padding: 10px;
+    font-size: large;
+    width: 200px;
+    height: max-content;
+    box-shadow: 0 0px 10px 0 rgba(255, 0, 0, 0.973), 0 0px 8px 0 rgba(244, 51, 7, 0.045)
+}
+// select{
+//     border: solid 2px rgb(0, 132, 255);
+// }
+.vender{
+    box-shadow: 0 0px 10px 0 rgba(169, 161, 161, 0.973), 0 0px 8px 0 rgba(244, 51, 7, 0.045);
+    padding: 10px;
+}
+p-dropdown{
+    margin: 5px;
+}
+.buy{
+    font-weight: 500;
+    color: black;
+}

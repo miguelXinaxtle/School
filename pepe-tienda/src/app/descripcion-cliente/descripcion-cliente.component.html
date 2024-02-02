@@ -1,0 +1,22 @@
+
+
+<p-card header="Editar Cliente" *ngIf="compras">
+    <p class="m-0">
+
+<label style="padding-left: 10px;" for="">Nombre</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="compras.nombre"/>
+
+<label for="">Nacimiento</label>
+<p-calendar [(ngModel)]="compras.nacimiento"></p-calendar>
+
+<label for="">Correo</label>
+<input type="email" pInputText="Nombre" [(ngModel)]="compras.correo"/>
+
+<label  for="">Telefono</label>
+<input type="tel" pInputText="Nombre" [(ngModel)]="compras.telefono"/>
+
+<div>
+    <p-button (onClick)="alterCliente(compras.idCliente)" label="Actualizar" severity="success"></p-button>
+</div> 
+
+</p-card>

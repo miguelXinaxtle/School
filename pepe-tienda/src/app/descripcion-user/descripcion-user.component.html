@@ -1,0 +1,27 @@
+
+<p-card header="Editar Usuario" *ngIf="datos">
+    <p class="m-0">
+
+<label style="padding-left: 10px;" for="">Nombre</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="datos.Nombre"/>
+
+<label for="">Nacimiento</label>
+<p-calendar [(ngModel)]="datos.nacimiento"></p-calendar>
+
+<label for="">Correo</label>
+<input type="email" pInputText="Nombre" [(ngModel)]="datos.correo"/>
+
+<label  for="">Telefono</label>
+<input type="tel" pInputText="Nombre" [(ngModel)]="datos.telefono"/>
+<div>
+
+<label style="margin: 0px;" for="">Foto</label>
+<input type="text" pInputText="Nombre" [(ngModel)]="datos.foto"/>
+<p-dropdown  [options]="puestoList" [(ngModel)]="idPuestoSelected"   optionLabel="nombre"  placeholder="Puesto"></p-dropdown>
+</div>
+
+<div>
+    <p-button (onClick)="upadateUsuario(datos.idUsuario)" label="Editar Usuario" severity="success"></p-button>
+</div> 
+
+</p-card>
