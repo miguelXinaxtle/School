@@ -6,8 +6,8 @@ import { resolve } from 'path';
 
 
 const sqlConfig = {
-    user: 'sa',
-    password: 'S0p0rt3',
+    user: '',
+    password: '',
     database: 'Escuela',
     server: '192.168.20.71',
     pool: {
